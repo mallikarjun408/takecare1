@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<style>
+		.custom-content-container p {
+			color: #fff !important;
+			padding: 0 3px 0 3px !important;
+			text-align: justify;
+		}
+	</style>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Contact Us </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-white-triangle-background-image" onclick="pageLevelClick(event)">
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner">
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" style="background: #213542;" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #FFF; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+
+					</div>
+					<div class="colored-header-text">
+						Contact Us
+					</div>
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<div class="small-12 columns">
+
+							<!--Network loading indicator-->
+							<div id="network-loading-indicator" class="network-loading-container">
+								<img class="img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+							</div>
+							<!--Network loading indicator-->
+							<!--Network failed message-->
+							<div id="network-loading-failed-message" class="network-loading-failed-message">
+								<span>
+									<img class="network-message-image" alt="Error Occurred" src="../assets/images/error_icon.png">
+									<div class="network-error-title">There was an error loading the details.
+										<br>Please close app and try again.
+										<br>If the problem persists call us on
+										<br>1800 652525</div>
+								</span>
+							</div>
+							<!--Network failed message-->
+
+							<p id="contactUs"></p>
+
+						</div>
+					</div>
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../Utils/Constants.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			document.addEventListener("resume", onAppResume, false);
+
+			$.ajax({
+				type: 'GET',
+				url: appContactusUrl,
+				timeout: 10000,
+				success: function (data) {
+
+					document.getElementById("network-loading-indicator").style.display = "none";
+					var Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) { var t = ""; var n, r, i, s, o, u, a; var f = 0; e = Base64._utf8_encode(e); while (f < e.length) { n = e.charCodeAt(f++); r = e.charCodeAt(f++); i = e.charCodeAt(f++); s = n >> 2; o = (n & 3) << 4 | r >> 4; u = (r & 15) << 2 | i >> 6; a = i & 63; if (isNaN(r)) { u = a = 64 } else if (isNaN(i)) { a = 64 } t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a) } return t }, decode: function (e) { var t = ""; var n, r, i; var s, o, u, a; var f = 0; e = e.replace(/[^A-Za-z0-9+/=]/g, ""); while (f < e.length) { s = this._keyStr.indexOf(e.charAt(f++)); o = this._keyStr.indexOf(e.charAt(f++)); u = this._keyStr.indexOf(e.charAt(f++)); a = this._keyStr.indexOf(e.charAt(f++)); n = s << 2 | o >> 4; r = (o & 15) << 4 | u >> 2; i = (u & 3) << 6 | a; t = t + String.fromCharCode(n); if (u != 64) { t = t + String.fromCharCode(r) } if (a != 64) { t = t + String.fromCharCode(i) } } t = Base64._utf8_decode(t); return t }, _utf8_encode: function (e) { e = e.replace(/rn/g, "n"); var t = ""; for (var n = 0; n < e.length; n++) { var r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r) } else if (r > 127 && r < 2048) { t += String.fromCharCode(r >> 6 | 192); t += String.fromCharCode(r & 63 | 128) } else { t += String.fromCharCode(r >> 12 | 224); t += String.fromCharCode(r >> 6 & 63 | 128); t += String.fromCharCode(r & 63 | 128) } } return t }, _utf8_decode: function (e) { var t = ""; var n = 0; var r = c1 = c2 = 0; while (n < e.length) { r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r); n++ } else if (r > 191 && r < 224) { c2 = e.charCodeAt(n + 1); t += String.fromCharCode((r & 31) << 6 | c2 & 63); n += 2 } else { c2 = e.charCodeAt(n + 1); c3 = e.charCodeAt(n + 2); t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63); n += 3 } } return t } }
+
+					$("#contactUs").html(Base64.decode(data.encodedContent));
+
+				},
+				error: function () {
+					document.getElementById("network-loading-indicator").style.display = "none";
+					document.getElementById("contactUs").style.display = "none";
+					document.getElementById("network-loading-failed-message").style.display = "block";
+				}
+
+			});
+
+		});
+
+	</script>
+</body>
+
+</html>

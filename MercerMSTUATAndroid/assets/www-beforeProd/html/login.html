@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>LogIn</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-back-image" onload="onLoad();" onclick="pageLevelClick(event)">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<img width="150" title="Mercer" alt="Mercer" src="../assets/images/Mercer_Logo_Rev.png">
+					</div>
+
+					<div class="custom-hamburger-main-container">
+						<div class="canvas-container">
+							<div class="content-container">
+								<div class="inner-container">
+									<a href="#" class="button mmm main-menu-toggle custom-hamburger-icon" id="menu-link">
+										<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
+									</a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+
+							<div class="main-menu mobile-mega-menu" id="app-hamburger-menu">
+								<nav>
+									<ul>
+										<li>
+											<a href="#">About this App</a>
+											<ul>
+												<li>
+													<a href="support.html">App Support</a>
+												</li>
+												<li>
+													<a href="security.html">App Security</a>
+												</li>
+												<li>
+													<a href="aboutThisApp.html">App Information</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="contactus.html">Contact Us</a>
+
+										</li>
+									</ul>
+
+								</nav>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+
+					<div class="login-heading-container">
+						<div>
+							<img title="Mercer" alt="Mercer logo" class="img-mercer-logo" src="../assets/images/mercer_icon_blank_back.png">
+						</div>
+						<div class="login-heading-title">Welcome to Mercer Super</div>
+					</div>
+
+					<div class="row login-form-main-container">
+
+						<!-- FORM STACKED - BEGINS -->
+						<!-- <form data-abide novalidate>
+							<div class="">
+								<fieldset class="small-12 medium-8 columns">
+									<label style="text-align:center">
+										ACCOUNT LOGIN
+									</label>
+								</fieldset>
+							</div>
+							<div class="">
+								<fieldset class="small-12 medium-8 columns">
+									<label>
+										<input onpaste="return false;" onCopy="return false" type="number" placeholder="Employer / Plan number" id="EmployeeNumberTextBox"
+										 onkeyup="updateLoginButton()" onkeypress="return isNumberKey(event)">
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="">
+								<fieldset class="small-12 medium-8 columns">
+									<label>
+										<input onpaste="return false;" onCopy="return false" type="number" placeholder="Member number" id="MembernumberTextBox" onkeyup="updateLoginButton()"
+										 onkeypress="return isNumberKey(event)">
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="">
+								<fieldset class="small-12 medium-8 columns">
+									<label class="pwd-lbl">
+										<input onpaste="return false;" onCopy="return false" class="pwd-txt" type="password" placeholder="PIN/Password" id="PasswordTextBox"
+										 onkeyup="updateLoginButton()">
+									</label>
+								</fieldset>
+							</div>
+						</form> -->
+
+						<div>
+							<label class="login-msg-block">
+								At Mercer, we make a difference in the lives of more than 110 million people every day by advancing their health, wealth,
+								and careers. Login to take benefit.
+							</label>
+						</div>
+
+						<!-- FORM STACKED - ENDS -->
+					</div>
+					<div id="quick-login-tnc-div" class="tnc-div">
+						<input type="checkbox" id="tnc-chkbox">
+						<label class="tnc-label"> I Agree to the
+							<a href="https://www.mercerfinancialservices.com/terms-and-conditions.html">Terms and Conditions </a>
+						</label>
+					</div>
+
+					<div class="row">
+						<div class="small-12 medium-8 columns">
+
+							<fieldset class="small-12 medium-8 columns">
+								<label>
+									<button class="button expanded evo-button login-btn-style" style="padding: 0 0;height: 40px;margin-bottom: 0;background-color: #213542;color: #a2ddde;opacity:0.6"
+									 id="login-btn" onclick="loginButtoClicked()">Login</button>
+								</label>
+							</fieldset>
+
+							<div class="custom-revel-container reveal evo-reveal" id="login-basic" data-reveal>
+								<h3>Login details not valid</h3>
+								<p class="custom-reveal-para">Please ensure you've entered everything correctly.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Retry</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+
+
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="not-authorized" data-reveal>
+								<h3>Message</h3>
+								<p class="custom-reveal-para">You are not currently authorised to use this app.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Ok</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+							<!-- 4 DIGIT PIN SETUP DIALOG START -->
+							<div class="custom-revel-container reveal evo-reveal" id="four-digit-pin-basic" data-reveal>
+								<p class="custom-reveal-para">Please set-up 4-digit pin before continuing</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" onclick="navigateToPinSetup()">OK</button>
+
+								</div>
+							</div>
+							<!-- 4 DIGIT PIN SETUP DIALOG END -->
+
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+					<!-- TnC ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog-TnC" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display-TnC"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+					<!-- TnC ALERT DIALOG END -->
+					<!-- LOG OUT DIALOG START -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="log-out-dialog" data-reveal>
+							<p class="custom-reveal-para" id="reveal-msg-para">Do you want to exit the application?</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn logout-no-btn" onclick="dismissDialog()">No</button>
+								<button class="button expanded evo-button custom-reveal-btn logout-yes-btn" onclick="exitApplication()">Yes</button>
+							</div>
+						</div>
+					</div>
+					<!-- LOG OUT DIALOG END -->
+
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+		<div id="footer">
+			<div class="version-details" style="margin-bottom:20px" id="version-details"></div>
+			<div class="version-details" id="version-code-details"></div>
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../scripts/login.js"></script>
+	<script src="../assets/js/forge-sha256.min.js"></script>
+	<script src="../Utils/Constants.js"></script>
+	<script type="text/javascript" src="../Utils/utils.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+	<script src="../scripts/encryption_utils.js"></script>
+
+</body>
+
+</html>

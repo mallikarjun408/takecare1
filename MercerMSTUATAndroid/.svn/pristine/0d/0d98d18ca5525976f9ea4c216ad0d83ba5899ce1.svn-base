@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Confirm new PIN</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-back-image" onLoad="onLoad();">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			<div class="custom-title-bar-logo">
+				<img width="150" style="padding-top: 4%;" title="Mercer" alt="Mercer" src="../assets/images/Mercer_Logo_Rev.png">
+			</div>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+				<!-- @Sagar adding empty nav bar for consistency	 -->
+				<nav class="custom-title-bar"></nav>
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row single-form-container">
+						<form data-abide novalidate>
+							<label class="device-pin-lbl">Confirm new PIN</label>
+							<div class="pin-input-div-container">
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="FirstDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="SecondDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="ThirdDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" maxlength="1" id="FourthDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+							</div>
+
+						</form>
+
+						<!-- Change pin success reveal - BEGINS -->
+
+						<div class="small-12 medium-8 columns">
+							<div class="custom-revel-container reveal evo-reveal" id="change-pin-success-reveal" data-reveal>
+								<h3> Success! </h3>
+								<p class="custom-reveal-para">Your new PIN has been created.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" onclick="document.location.href='quick-login.html';">Ok</button>
+								</div>
+
+							</div>
+						</div>
+						<!-- Change pin success reveal - ENDS -->
+
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="window.history.back();" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/changePin.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../scripts/change_pin-confirm_new_pin.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

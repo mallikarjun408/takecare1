@@ -1,0 +1,6 @@
+org.apache.cordova
+int id btnNegative 0x7f0c0001
+int id btnPositive 0x7f0c0002
+int id txtViewMessage 0x7f0c0003
+int id txtViewTitle 0x7f0c0004
+int layout dialog_layout 0x7f0f0001

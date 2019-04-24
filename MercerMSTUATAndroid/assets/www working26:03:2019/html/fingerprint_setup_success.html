@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Fingerprint set-up success </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-back-image" onload="onLoad()">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			<div class="custom-title-bar-logo">
+				<img width="150" style="padding-top: 4%;" title="Mercer" alt="Mercer" src="../assets/images/Mercer_Logo_Rev.png">
+			</div>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner"></header>
+
+			</br>
+			</br>
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<div class="small-12 columns terms-conditions-content-container">
+
+							<h2 class="congrats-title"> Congratulations! </h2>
+							<p class="pin-setup-msg">
+								The Fingerprint has been setup Successfully. On your next login, all you need is your Fingerprint for this device.
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-12 medium-8 columns terms-btn-outer">
+							<button class="button expanded evo-button terms-btn-style" onclick="performLoginRequest();">Ok</button>
+						</div>
+					</div>
+
+				</section>
+				<!-- ALERT DIALOG START -->
+				<div class="small-12 medium-8 columns">
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+				</div>
+				<!-- ALERT DIALOG END -->
+				<!--Page Overlay-->
+				<div id="overlay-div" class="full-page-overlay">
+					<div style="text-align:center">
+						<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+					</div>
+				</div>
+				<!--Page Overlay-->
+				<!-- Session expiry dialog -->
+				<div class="custom-revel-container reveal evo-reveal display_none" id="session-expired-dialog" data-reveal>
+					<p class="custom-reveal-para" id="session-expired-message">Your session has expired</br>Please login again</p>
+					<div class="custom-reveal-btn-container">
+						<button class="button expanded evo-button custom-reveal-btn" onclick="navigateToLoginPage()" data-close>OK</button>
+					</div>
+				</div>
+				<!-- Session expiry dialog -->
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../scripts/page_success_utils.js"></script>
+	<script src="../scripts/fingerprint_setup_success.js"></script>
+	<script src="../Utils/Constants.js"></script>
+	<script type="text/javascript" src="../Utils/utils.js"></script>
+	<script src="../scripts/login_utils.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

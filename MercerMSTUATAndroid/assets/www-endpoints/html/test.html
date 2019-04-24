@@ -1,0 +1,58 @@
+<!--var hexArray = "2646c6a16128a0b3c5a529d05bbb8095a07c1dc6a029b7ae7fc0bca1a82d55bb"
+
+ 
+    .replace(/\r|\n/g, "")
+    .replace(/([\da-fA-F]{2}) ?/g, "0x$1 ")
+    .replace(/ +$/, "")
+    .split(" ");
+var byteString = String.fromCharCode.apply(null, hexArray);
+var base64string = window.btoa(byteString); -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to encode a URI.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var uri = "my test.asp?name=ståle&car=saab";
+  var res = encodeURI(uri);
+  // document.getElementById("demo").innerHTML = res;
+  var codeVerifier = generateRandomValue();
+  var codeChallenge = createBase64(codeVerifier);  
+  document.getElementById("demo").innerHTML = "codeVerifier = "+codeVerifier + "    and \n    codeChallenge    =  "+codeChallenge;
+}
+
+function getBase64CodeVerifier(isFirstTime) {
+    var codeVerifier = generateRandomValue();   
+    return base64URLEncode(codeVerifier);
+}
+function generateRandomValue() {
+    var randomText = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    //generating a text of length up-to 50 chars
+    for (var i = 0; i < 43; i++)
+        randomText += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return randomText;
+}
+function createBase64(shaStr){
+  var mStr = forge_sha256(shaStr);
+  var hexArray = mStr.replace(/\r|\n/g, "")
+    .replace(/([\da-fA-F]{2}) ?/g, "0x$1 ")
+    .replace(/ +$/, "")
+    .split(" ");
+  var byteString = String.fromCharCode.apply(null, hexArray);
+  var base64string = window.btoa(byteString);
+  return base64string.slice(0,-1);
+}
+</script>
+<script type="text/javascript" src="forge-sha256.min.js"></script>
+</body>
+</html>

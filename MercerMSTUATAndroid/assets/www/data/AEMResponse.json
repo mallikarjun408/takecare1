@@ -1,0 +1,12 @@
+{
+
+  UseNewEndpointsIOS:"false",
+
+  UseNewEndpointsAndroid:"false",
+
+  CurrentEndpoints:"https://uat.services.mercerfinancialservices.com",
+
+  NewEndpoints:"https://pf-mst.001.staging.ping-nonprod.mercerenc.com"
+
+}
+

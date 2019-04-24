@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
+            "map": [
+                {
+                    "source": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/res/values-fr/fpauth-strings.xml",
+                    "from": {
+                        "startLines": "19,17,21,22,23,20,24,18,25,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "820,691,964,1054,1118,918,1216,746,1283,1459",
+                        "endColumns": "97,54,89,63,97,45,66,73,175,98",
+                        "endOffsets": "913,741,1049,1113,1211,959,1278,815,1454,1553"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,208,298,362,460,506,573,647,823",
+                        "endColumns": "97,54,89,63,97,45,66,73,175,98",
+                        "endOffsets": "148,203,293,357,455,501,568,642,818,917"
+                    }
+                }
+            ]
+        }
+    ]
+}

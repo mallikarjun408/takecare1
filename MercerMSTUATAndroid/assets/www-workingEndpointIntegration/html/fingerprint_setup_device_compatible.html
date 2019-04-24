@@ -1,0 +1,222 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Fingerprint login set-up </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-back-image" onload="onLoad();">
+
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #FFF; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+					</div>
+
+					<div class="custom-hamburger-main-container">
+						<div class="canvas-container">
+							<div class="content-container">
+								<div class="inner-container">
+									<a href="#" class="button mmm main-menu-toggle custom-hamburger-icon" id="menu-link">
+										<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
+									</a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+
+							<div class="main-menu mobile-mega-menu" id="app-hamburger-menu">
+								<nav>
+									<ul>
+										<ul>
+											<li>
+												<a href="#">About this App</a>
+												<ul>
+													<li>
+														<a href="support.html">App Support</a>
+													</li>
+													<li>
+														<a href="security.html">App Security</a>
+													</li>
+													<li>
+														<a href="aboutThisApp.html">App Information</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">App Settings</a>
+												<ul>
+													<li>
+														<a href="login_settings.html">Login Settings</a>
+													</li>
+													<li>
+														<a data-open="change-pin-menu-revel">Change Device PIN</a>
+													</li>
+													<li>
+														<a href="quick_balance.html">Quick Balance</a>
+													</li>
+													<!-- REVEAL - BEGINS -->
+													<div class="custom-revel-container reveal evo-reveal" id="change-pin-menu-revel" data-reveal>
+														<h3 style="margin-bottom: 12%;">Are you sure you want to change your PIN?</h3>
+
+														<div class="custom-reveal-btn-container">
+															<button class="button expanded evo-button custom-reveal-btn forgot-code-cancel-btn" onclick="document.location.href='change_pin-enter_current_pin.html';">Yes</button>
+															<button class="button expanded evo-button custom-reveal-btn forgot-code-reset-btn" style="color: #00a8c8;" data-close>No</button>
+														</div>
+
+													</div>
+													<!-- REVEAL - ENDS -->
+												</ul>
+											</li>
+
+											<li>
+												<a href="contactus.html">Contact Us</a>
+
+											</li>
+
+										</ul>
+
+								</nav>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<div class="small-12 columns terms-conditions-content-container">
+
+							<h2 style="margin-top: 0.8rem;margin-bottom: 2rem;">Fingerprint login setup</h2>
+							<p>
+								If your device is compatible you can use stored fingerprints to quickly access your accounts.
+							</p>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="small-12 medium-8 columns terms-btn-outer">
+
+							<!--@Sagar removing the option to check device compatibility since fingerprint page is displayed only
+									if the device is fingerprint compatible-->
+							<!--<button class="button expanded evo-button terms-btn-style" style="opacity: 0.6;" onclick="isMydeviceCompatibleCliked()" >Is my device compatible?</button>-->
+
+							<button class="button expanded evo-button terms-btn-style" onclick="nextButtonClicked()">Next</button>
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="fingerprint-not-availabl" data-reveal>
+								<h3>Fingerprint not available</h3>
+								<p class="custom-reveal-para">This might be because your device isn't Fingerprint compatible.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Exit quick login setup</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="no-fingerprint-detected-reveal" data-reveal>
+								<h3>No Fingerprints detected</h3>
+								<p class="custom-reveal-para">This might be because your device isn't Fingerprint compatible, or because you haven't stored any fingerprints on
+									it.
+								</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" style="border-bottom: 1px solid #abafb0; font-weight: bold;"
+									 onclick="setUpTouchIDClicked()">Setup Touch ID</button>
+									<button class="button expanded evo-button custom-reveal-btn" onclick="exitButtonClicked()">Set up 4-digit device PIN</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="compatible-device-reveal" data-reveal>
+								<h3>Compatible devices</h3>
+								<p class="custom-reveal-para">Android phone with Fingerprint capability and Android 6.0 and above.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Ok</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="device-is-compatible-reveal" data-reveal>
+								<h3>Device Compability</h3>
+								<p class="custom-reveal-para">Your device is Fingerprint compatible. Fingerprint compatible devices are Android phone with Fingerprint capability
+									and Android 6.0 and above.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Ok</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal" id="device-is-not-compatible-reveal" data-reveal>
+								<h3>Device Compability</h3>
+								<p class="custom-reveal-para">Your device is not Fingerprint compatible. Fingerprint compatible devices are Android phone with Fingerprint capability
+									and Android 6.0 and above.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn" data-close>Ok</button>
+								</div>
+							</div>
+							<!-- REVEAL - ENDS -->
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../scripts/fingerprint_setup_device_compatible.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

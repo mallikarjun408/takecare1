@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Enter device PIN</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<link href="../css/common.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="containerBody" onload="onLoad();">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+
+					<div class="custom-title-bar-logo titlebarStyle">
+                        <div  id="showLogo" class="custom-title-bar-logo loginSuccessHeader">
+                            <img title="CareSuper" alt="CareSuper" class="headerLogo">
+                        </div>
+						<span id="bckBtn" class="urlBack backIconStyle">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small backIconViewStyle"></i>
+						</span>
+					</div>
+
+
+					<div class="custom-hamburger-main-container">
+						<div class="canvas-container">
+							<div class="content-container">
+								<div class="inner-container" id="mm">
+									<a href="#" class="button mmm main-menu-toggle custom-hamburger-icon" id="menu-link">
+										<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
+									</a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+
+							<div class="main-menu mobile-mega-menu" id="app-hamburger-menu">
+
+								<nav>
+									<ul>
+										<li>
+											<a href="#">About this App</a>
+											<ul>
+												<li>
+													<a href="support.html">App Support</a>
+												</li>
+												<li>
+													<a href="security.html">App Security</a>
+												</li>
+												<li>
+													<a href="aboutThisApp.html">App Information</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">App Settings</a>
+											<ul>
+												<li id="list-item-login-settings">
+													<a href="login_settings.html">Login Settings</a>
+												</li>
+												<li>
+													<a data-open="change-pin-menu-revel">Change Device PIN</a>
+												</li>
+												<li>
+													<a href="quick_balance.html">Quick Balance</a>
+												</li>
+												<!-- REVEAL - BEGINS -->
+												<div class="custom-revel-container reveal evo-reveal display_none" id="change-pin-menu-revel" data-reveal data-options="closeOnClick:false">
+													<p class="popupTextNormal chnagePinPopStyle" >Are you sure you want to change device PIN?</p>
+
+													<div class="custom-reveal-btn-container">
+														<button class="button expanded evo-button custom-reveal-btn forgot-code-cancel-btn popupTextNormal primaryBtn" onclick="onClickSetDevicePin()">Yes</button>
+														<button class="button expanded evo-button custom-reveal-btn forgot-code-reset-btn popupTextNormal popupClose secondaryBtn" style="color: #00a8c8;" data-close>No</button>
+													</div>
+
+												</div>
+												<!-- REVEAL - ENDS -->
+											</ul>
+										</li>
+
+										<li>
+											<a href="contactus.html">Contact Us</a>
+										</li>
+									</ul>
+
+								</nav>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row single-form-container">
+						<form data-abide novalidate>
+							<label class="device-pin-lbl textbold">Enter device PIN</label>
+							<div class="pin-input-div-container">
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="FirstDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="SecondDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="ThirdDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" maxlength="1" id="FourthDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+							</div>
+
+						</form>
+						<p> <a class="forgotcode-txt textNormal" data-open="forgot-code"> Reset / Clear my device PIN </a></p>
+						<div class="small-12 medium-8 columns display_none">
+							<!-- REVEAL - BEGINS -->
+							<div class="custom-revel-container reveal evo-reveal display_none" id="forgot-code" data-reveal data-options="closeOnClick:false">
+								<h3 class="popupTextBold">Forgotten device code?</h3>
+								<p class="custom-reveal-para popupTextNormal">Resetting will clear your
+									<b>quick login </b> and
+									<b> balance preview </b> settings.</p>
+								<div class="custom-reveal-btn-container">
+									<button class="button expanded evo-button custom-reveal-btn forgot-code-cancel-btn popupTextNormal secondaryBtn" data-close>Cancel</button>
+									<button class="button expanded evo-button custom-reveal-btn forgot-code-reset-btn popupTextNormal primaryBtn" onclick="forgotCodeButtonClicked();">Reset</button>
+								</div>
+
+							</div>
+							<!-- REVEAL - ENDS -->
+						</div>
+
+						<!-- Fingerprint button -->
+						<label class="lbl-or-fingerprint textNormal" id="lblFingerprintPrintOR">OR</label>
+						<button id="btnFingerprint" class="button expanded evo-button custom-btn-style textbold" onclick="openFingerprint()" style="margin-top:40px;visibility:hidden; padding:0 0;height:40px;background-color: #213542;color: #a2ddde;">Use Fingerprint</button>
+						<!-- Fingerprint button -->
+
+					</div>
+
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+
+					<div class="row">
+						<div class="small-12 columns">
+							<!-- Space for keyboard -->
+
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="okclicked()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+					<!-- MAX ATTEMTPS DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="max-attempts-alert-dialog" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="max-attempts-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<div class="revealBg"></div>
+
+					<!-- MAX ATTEMTPS DIALOG END -->
+
+					<!-- Session expiry dialog -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="session-expired-dialog" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="session-expired-message">Your session has expired</br>Please login again</p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- Session expiry dialog -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../scripts/enter_device_pin.js"></script>
+	<script src="../Utils/Constants.js"></script>
+	<script type="text/javascript" src="../Utils/utils.js"></script>
+	<script src="../scripts/login_utils.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

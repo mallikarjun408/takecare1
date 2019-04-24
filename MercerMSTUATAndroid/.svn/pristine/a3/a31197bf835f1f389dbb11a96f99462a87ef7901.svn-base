@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/res/values/fpauth-colors.xml",
+                    "from": {
+                        "startLines": "18,19,17",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "739,786,691",
+                        "endColumns": "46,47,47",
+                        "endOffsets": "781,829,734"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,102,150",
+                        "endColumns": "46,47,47",
+                        "endOffsets": "97,145,193"
+                    }
+                },
+                {
+                    "source": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/res/values/fpauth-strings.xml",
+                    "from": {
+                        "startLines": "19,17,21,22,23,20,24,18,25,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "807,691,938,1022,1080,892,1174,745,1245,1384",
+                        "endColumns": "84,53,83,57,93,45,70,61,138,84",
+                        "endOffsets": "887,740,1017,1075,1169,933,1240,802,1379,1464"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "312,397,451,535,593,687,733,804,925,1064",
+                        "endColumns": "84,53,83,57,93,45,70,61,138,84",
+                        "endOffsets": "392,446,530,588,682,728,799,861,1059,1144"
+                    }
+                },
+                {
+                    "source": "/Users/minuagrawal/Desktop/MercerMSTAndroid/android/Equip_&_MST_Android/MST_1_00_20_Prod_Serv/platforms/android/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "164,55,105",
+                        "endColumns": "63,49,58",
+                        "endOffsets": "223,100,159"
+                    },
+                    "to": {
+                        "startLines": "5,6,15",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "198,262,866",
+                        "endColumns": "63,49,58",
+                        "endOffsets": "257,307,920"
+                    }
+                }
+            ]
+        }
+    ]
+}

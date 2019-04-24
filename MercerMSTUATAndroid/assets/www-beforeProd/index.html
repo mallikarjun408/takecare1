@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="assets/css/evolution.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/app.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+
+    <title>Mercer Super</title>
+</head>
+
+<body class="generic-back-image">
+
+    <!-- Keeping the below mentioned elements hidden initially
+    Will enable the visibility when required -->
+    <div class="index-mercer-logo">
+        <img width="150" title="Mercer" alt="Mercer" src="assets/images/Mercer_Logo_Rev.png">
+    </div>
+    <div class="main">
+        <div class="wrapper">
+
+            <div id="network-loading-failed-message" class="index-network-loading-failed-message">
+                <span>
+                    <img class="index-network-message-image" alt="Error Occurred" src="assets/images/error_icon.png">
+                    <div class="network-error-title">There was an error loading the details.<br>Please close app and try again.<br>If the problem persists call us on<br>1800 652525</div>
+                </span>
+                <button class="button expanded evo-button retry-btn-index" id="index-retry-btn" onclick="navigateToWebAppLogin()">Retry</button>
+            </div>
+            <div id="inapp-closed-msg" class="index-app-open-message">
+                <div class="index-inapp-msg">Welcome to Mercer Super</br>Tap below to login</div>
+                <button class="button expanded evo-button retry-btn-index" id="index-login-btn" onclick="navigateToWebAppLogin()">Login</button>
+            </div>
+
+            <div id="loading-indicator" class="loading-imge-container slidLoading">
+                <img width="15%" title="loading" alt="loading" src="assets/images/loading_indicator.gif">
+            </div>
+
+        </div>
+    </div>
+    <!-- ALERT DIALOG START -->
+    <div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal>
+        <p class="custom-reveal-para" id="message-to-display"></p>
+        <div class="custom-reveal-btn-container">
+            <button class="button expanded evo-button custom-reveal-btn" onclick="moveToLoginPage()" data-close>OK</button>
+        </div>
+    </div>
+    <!-- ALERT DIALOG END -->
+    <!-- LOG OUT DIALOG START -->
+    <div class="small-12 medium-8 columns display_none">
+        <div class="custom-revel-container reveal evo-reveal " id="log-out-dialog" data-reveal>
+            <p class="custom-reveal-para" id="reveal-msg-para">Do you want to exit the application?</p>
+            <div class="custom-reveal-btn-container">
+                <button class="button expanded evo-button custom-reveal-btn logout-no-btn" onclick="dismissDialog()">No</button>
+                <button class="button expanded evo-button custom-reveal-btn logout-yes-btn" onclick="exitApplication()">Yes</button>
+            </div>
+        </div>
+    </div>
+    <!-- LOG OUT DIALOG END -->
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/evolution.js"></script>
+    <script type="text/javascript" src="assets/js/evolution-animations.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-mobile-mega-menu.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="Utils/Constants.js"></script>
+    <script type="text/javascript" src="Utils/utils.js"></script>
+    <script type="text/javascript" src="scripts/page_utils.js"></script>
+    <script type="text/javascript" src="assets/js/forge-sha256.min.js"></script>
+    <script type="text/javascript" src="scripts/encryption_utils.js"></script>
+</body>
+
+</html>

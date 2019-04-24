@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Login Success</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="generic-white-triangle-background-image" onload="onLoad();">
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" style="background: #213542;" role="banner">
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #FFF; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+
+					</div>
+					<div class="colored-header-text">
+						Login Settings
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row" class="div-setup-fingerprint" id="fingerprint-setup-div">
+						<div class="small-12 columns login-settings-container">
+							<div class="login-settings-desc1">This application has support for Fingerprint login</div>
+							<div class="login-settings-desc2">Set-up Fingerprint now for quick login</div>
+							<div style="text-align:center">
+								<button class="button expanded evo-button login-settings-btn" onclick="setupFingerprint()">Set-up Fingerprint</button>
+							</div>
+						</div>
+
+						<div class="custom-revel-container reveal evo-reveal" id="fp-verify-dialog" style="padding:0px!important" data-reveal>
+							<div class="row login-form-main-container" style="background:#808080">
+								<form data-abide novalidate>
+									<label class="device-pin-lbl">Please verify your identity</br>Enter current PIN</label>
+									<div class="pin-input-div-container">
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+										<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="FirstDigit"
+										 onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+										<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="SecondDigit"
+										 onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+										<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="ThirdDigit"
+										 onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+										<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" maxlength="1" id="FourthDigit"
+										 onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+										
+									</div>
+									<label class="lbl-incorrect-attempts" id="incorrect-attempts-counter">Incorrect PIN</label>
+
+								</form>
+
+							</div>
+						</div>
+
+
+
+					</div>
+
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="fp-info-dialog" data-reveal>
+							<p class="custom-reveal-para" id="reveal-msg-para">Before setting up Fingerprint access, it's important to note that anyone who stores their Fingerprints on this device
+								will have access to your account/s.</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn fp-dontsetup-btn" onclick="dismissDialog()">Don't SetUp</button>
+								<button class="button expanded evo-button custom-reveal-btn fp-setup-btn" onclick="verifyUserIdentity()">SetUp</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" class="fingerprint-setup-done" id="fingerprint-setup-done-div">
+						<div class="small-12 columns login-settings-container">
+
+							<div class="fingerprint-feature-title">
+								Now you can log in more easily using only your fingerprint.
+							</div>
+
+							<p class="fingerprint-feature-para">
+								Tap below to enable / disable fingerprint login as your preferred login method
+							</p>
+
+							<div class="switch-container-div" style="margin-bottom:5% !important">
+								<div class="switch large custom-notification-switch" style="margin-bottom:0px !important">
+									<input class="switch-input" id="security-switch-ip" type="checkbox" name="exampleSwitch">
+									<label class="switch-paddle" for="security-switch-ip">
+										<span class="show-for-sr">Show Large Elephants</span>
+									</label>
+								</div>
+								<div class="fingerprint-switch" id="def-login-style">Enable/disable Fingerprint style</div>
+							</div>
+							<div class="fingerprint-feature-value" id="fingerprint-default">
+								Fingerprint login is now enabled
+							</div>
+							<div class="fingerprint-feature-value" id="fingerprint-not-default">
+								Fingerprint login is disabled
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row" class="div-fingerprint-error" id="fingerprint-error-div">
+						<div class="small-12 columns login-settings-container">
+							<div class="login-settings-desc1">This application has support for Fingerprint login</div>
+							<div class="login-settings-desc2">It seems that you have not yet set-up Fingerprints on your device</br>Click below to go-to settings and set-up Fingerprints</div>
+							<div style="text-align:center">
+								<button class="button expanded evo-button login-settings-btn" onclick="gotoSettings()">Go-To Settings</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" alert-dialog data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+					<!-- FINGERPRINT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="fingerprint-dialog" data-reveal>
+						<p class="custom-reveal-para" id="fp-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" alert-dialog onclick="updateBackground()">OK</button>
+						</div>
+					</div>
+					<!-- FINGERPRINT DIALOG END -->
+
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+
+					<!-- MAX ATTEMTPS DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="max-attempts-alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="max-attempts-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- MAX ATTEMTPS DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script type="text/javascript" src="../scripts/login_settings.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

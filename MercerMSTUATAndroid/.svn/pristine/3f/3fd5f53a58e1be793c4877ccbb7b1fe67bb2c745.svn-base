@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Quick Login</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link rel="stylesheet" href="../assets/css/swiper.min.css">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+	<!-- @Sagar required for the highlighting of T&C dialog -->
+	<!-- Do not change the import position -->
+	<link href="../assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<script src="../assets/js/swiper.min.js"></script>
+</head>
+
+<body class="generic-back-image" onload="onLoad()" onclick="pageLevelClick(event)">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<img width="135" title="Mercer" alt="Mercer" src="../assets/images/Mercer_Logo_Rev.png">
+					</div>
+
+					<div class="custom-hamburger-main-container">
+						<div class="canvas-container">
+							<div class="content-container">
+								<div class="inner-container">
+									<a href="#" class="button mmm main-menu-toggle custom-hamburger-icon" id="menu-link">
+										<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
+									</a>
+									<div style="clear:both"></div>
+								</div>
+							</div>
+
+							<div class="main-menu mobile-mega-menu" id="app-hamburger-menu">
+								<nav>
+									<ul>
+
+										<li>
+											<a href="#">About this App</a>
+											<ul>
+												<li>
+													<a href="support.html">App Support</a>
+												</li>
+												<li>
+													<a href="security.html">App Security</a>
+												</li>
+												<li>
+													<a href="aboutThisApp.html">App Information</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">App Settings</a>
+											<ul>
+												<li id="list-item-login-settings">
+													<a href="login_settings.html">Login Settings</a>
+												</li>
+												<li>
+													<a data-open="change-pin-menu-revel">Change Device PIN</a>
+												</li>
+												<li>
+													<a href="quick_balance.html">Quick Balance</a>
+												</li>
+												<!-- REVEAL - BEGINS -->
+												<div class="custom-revel-container reveal evo-reveal" id="change-pin-menu-revel" data-reveal>
+													<h3 style="margin-bottom: 12%;">Are you sure you want to change Device PIN?</h3>
+
+													<div class="custom-reveal-btn-container">
+														<button class="button expanded evo-button custom-reveal-btn forgot-code-cancel-btn" onclick="document.location.href='change_pin-enter_current_pin.html';">Yes</button>
+														<button class="button expanded evo-button custom-reveal-btn forgot-code-reset-btn" style="color: #00a8c8;" data-close>No</button>
+													</div>
+
+												</div>
+												<!-- REVEAL - ENDS -->
+											</ul>
+										</li>
+
+
+										<li>
+											<a href="contactus.html">Contact Us</a>
+										</li>
+
+									</ul>
+
+								</nav>
+							</div>
+						</div>
+					</div>
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<!-- Carosal - BEGINS -->
+
+						<div class="swiper-container" id="quick-login-swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div id="user-data-loading-img-container" class="loading-imge-container slidLoading">
+										<img width="15%" title="loading" alt="loading" src="../assets/images/loading_indicator.gif">
+									</div>
+									<p class="lead user-para" id="logged-in-user-details"></p>
+								</div>
+								<div class="swiper-slide">
+									<button id="btn-balance-without-pin" class="button expanded evo-button custom-btn-style" onclick="displayQuickBalance()">Quick Balance</button>
+
+									<div id="loading-img-container" class="loading-imge-container slidLoading">
+										<img width="15%" title="loading" alt="loading" src="../assets/images/loading_indicator.gif">
+									</div>
+
+									<div id="quick-balance-slide-container" class="quick-balance-slider-container slidContent" style="display:none;">
+										<div class="balanceWrapper">
+											<p class="lead" id="user-balance-para"></p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="swiper-button-prev swiper-button-white"></div>
+							<div class="swiper-button-next swiper-button-black"></div>
+						</div>
+						<div id="login-container-div">
+							<span>
+								<button id="btn-login" class="button expanded evo-button custom-btn-style" onclick="quickLoginClicked()">Login</button>
+							</span>
+						</div>
+
+						<!-- Carosal - ENDS -->
+					</div>
+
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+
+					<!-- ALERT DIALOG START -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+							<p class="custom-reveal-para" id="message-to-display"></p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+							</div>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+					<!-- LOG OUT DIALOG START -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="log-out-dialog" data-reveal>
+							<p class="custom-reveal-para" id="reveal-msg-para">Do you want to exit the application?</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn logout-no-btn" onclick="dismissDialog()">No</button>
+								<button class="button expanded evo-button custom-reveal-btn logout-yes-btn" onclick="exitApplication()">Yes</button>
+							</div>
+						</div>
+					</div>
+					<!-- LOG OUT DIALOG END -->
+					<!-- DIALOG FOR MAX ATTEMPTS -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="max-attempts-dialog" data-reveal>
+							<p class="custom-reveal-para" id="max-attempts-msg"></p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn" onclick="gotoEnterPin()">OK</button>
+							</div>
+						</div>
+					</div>
+					<!-- DIALOG FOR MAX ATTEMPTS -->
+
+					<!-- FINGERPRINT ERROR DIALOG START -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="alert-dialog-FP" data-reveal>
+							<p class="custom-reveal-para" id="message-to-display-FP"></p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn" onclick="enterPINPage()">USE PIN</button>
+							</div>
+						</div>
+					</div>
+					<!-- FINGERPRINT ERROR DIALOG END -->
+					<!-- Session expiry dialog -->
+					<div class="custom-revel-container reveal evo-reveal" id="session-expired-dialog" data-reveal>
+						<p class="custom-reveal-para" id="session-expired-message">Your session has expired</br>Please login again</p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- Session expiry dialog -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+		<div class="version-details" style="margin-bottom:20px" id="version-details"></div>
+		<div class="version-details" id="version-code-details"></div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../scripts/quick-login.js"></script>
+	<script src="../scripts/login_utils.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+	<script type="text/javascript" src="../assets/js/accounting.js"></script>
+	<!-- @Sagar required for the highlighting of T&C dialog -->
+	<!-- Do not change the import position -->
+	<script src="../assets/js/jquery-ui.min.js"></script>
+
+	<!-- As per documentation the swiper is required to be initialzed before the end of body tag and under the document on ready function -->
+	<!-- Reference Link : http://idangero.us/swiper/ -->
+	<script>
+		$(document).ready(function () {
+			//initialize swiper when document ready
+			var quickBalanceSwiper = new Swiper('.swiper-container', {
+				slidesPerView: 'auto',
+				direction: 'horizontal',
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+			quickBalanceSwiper.on('slideChange', function () {
+				var activeSlide = quickBalanceSwiper.activeIndex;
+				if (activeSlide == 0) {
+					$("#login-container-div").css("display", "block");
+				} else {
+					manageQBVisibility();
+					$("#login-container-div").css("display", "none");
+				}
+			})
+
+		});
+
+	</script>
+
+</body>
+
+</html>

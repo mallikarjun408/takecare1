@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Quick Balance </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-white-triangle-background-image" onload="onLoad()">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner">
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" style="background: #213542;" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #FFF; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+
+					</div>
+					<div class="colored-header-text">
+						Quick Balance
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<div class="small-12 columns">
+
+							<div class="quick-balance-title">
+								Quick Balance allows you to see your current account balance by swiping left from the login screen
+							</div>
+
+							<p style="color: #fff;margin-top: 2.5rem;margin-bottom: 1.5rem;padding: 0px !important;">
+								Tap below to enable / disable Quick Balance on your device.
+
+							</p>
+
+							<div class="switch-container-div">
+								<div class="switch large custom-notification-switch" style="margin-bottom:0px !important">
+									<input class="switch-input" id="security-switch-ip" type="checkbox" name="exampleSwitch">
+									<label class="switch-paddle" for="security-switch-ip">
+										<span class="show-for-sr">Show Large Elephants</span>
+									</label>
+								</div>
+								<div class="switch-msg-div" style="color:#fff" id="quick-balance-status">Enable/disable Quick Balance</div>
+							</div>
+							<div id="notification-outer-container" style="padding-left: 1.4%; display: block;background: #f0f0f0; padding-top: 2%; padding-bottom: 2%;border: 0px solid #999999;">
+
+								<span style="font-weight: bold;font-size: 1.2rem;">
+									Quick Balance feature is now enabled on your device
+								</span>
+							</div>
+
+							<div id="notification-outer-container1" style="padding-left: 1.4%; display: block;background: #f0f0f0; padding-top: 2%; padding-bottom: 2%;border: 0px solid #999999;">
+
+								<span style="font-weight: bold;font-size: 1.2rem;">
+									Quick Balance feature is now disabled on your device
+								</span>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="gotoTnC()" alert-dialog>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script type="text/javascript" src="../scripts/quick_balance.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>
