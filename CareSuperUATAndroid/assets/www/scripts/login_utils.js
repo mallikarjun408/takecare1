@@ -281,7 +281,7 @@ function getRefreshToken(whichRequest) {
                         $("#user-data-loading-img-container").css("display", "none");
                         $("#logged-in-user-details").css("margin-top", "30px");
                         console.log('loginUtils : error Callback  token'+JSON.stringify(error));
-                       logException("Messge:: getRefreshToken  failure callback from:: "+whichRequest+"  error response :: "JSON.stringify(data)+" || FileName:: quick-login.js || Method:: getRefreshToken()");
+                       logException("Messge:: getRefreshToken  failure callback from:: "+whichRequest+"  error response :: "+JSON.stringify(data)+" || FileName:: quick-login.js || Method:: getRefreshToken()");
                        var errorCode = tokenExpiresError(error);
                        var createAStatusCodeDiv ="";
                        if(config.plainContent == "displayAlerts=yes"){

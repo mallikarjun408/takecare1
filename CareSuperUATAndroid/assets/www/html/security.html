@@ -107,9 +107,13 @@
 	<script>
 
 		$(document).ready(function () {
-			initCrashlytics();
-			document.addEventListener("resume", onAppResume, false);
 
+			document.addEventListener("resume", onAppResume, false);
+			document.addEventListener("deviceready", onDeviceReady, false);
+		});
+
+		function onDeviceReady() {
+			initCrashlytics();
 			$.ajax({
 				type: 'GET',
 				url: appSecurityUrl,
@@ -130,8 +134,8 @@
 				}
 
 			});
+		}
 
-		});
 
 	</script>
 </body>

@@ -157,7 +157,7 @@ function initCrashlytics() {
 }
 
 function logException (exceptionMsg) {
-    if(isDebug){
+    if(isDebug) {
         _crashlytics.logException(exceptionMsg);
     }
 }

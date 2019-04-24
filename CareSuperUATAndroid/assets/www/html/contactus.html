@@ -108,6 +108,9 @@
 		$(document).ready(function () {
 
 			document.addEventListener("resume", onAppResume, false);
+			document.addEventListener("deviceready", onDeviceReady, false);
+		});
+		function onDeviceReady() {
 			initCrashlytics();
 			$.ajax({
 				type: 'GET',
@@ -129,8 +132,8 @@
 				}
 
 			});
+		}
 
-		});
 
 	</script>
 </body>

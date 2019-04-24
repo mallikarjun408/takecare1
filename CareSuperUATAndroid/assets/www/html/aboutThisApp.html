@@ -101,12 +101,18 @@
 	<script src="../Utils/Constants.js"></script>
 	<script type="text/javascript" src="../Utils/utils.js"></script>
 	<script src="../scripts/page_utils.js"></script>
-	
+
 	<script>
 		$(document).ready(function () {
-			initCrashlytics();
-			document.addEventListener("resume", onAppResume, false);
 
+			document.addEventListener("resume", onAppResume, false);
+			document.addEventListener("deviceready", onDeviceReady, false);
+
+
+		});
+
+		function onDeviceReady() {
+			initCrashlytics();
 			$.ajax({
 				type: 'GET',
 				url: aboutTheAppUrl,
@@ -128,7 +134,7 @@
 
 			});
 
-		});
+		}
 
 	</script>
 </body>
