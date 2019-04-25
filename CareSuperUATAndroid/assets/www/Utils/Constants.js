@@ -66,7 +66,8 @@ var INCORRECT_PIN_LEFT_MSG = "Incorrect PIN entered</br>You have " + INCORRECT_P
 var NOT_VALID_PIN = "Not a valid PIN, please re-enter";
 var INVALID_MAX_ATTEMPTS = "Invalid authentication/Fingerprint max attempts reached";
 var NO_MORE_ATTEMPTS_LOGINSETTINGS = "You have no more attempts left for identity verification.</br>Please login with your website login credentials";
-
+var FINGERPRINT_SUCCESSMSG = "Fingerprint set up successful!!</br>It has been set as the default login style and can be changed any time from the app menu";
+var FINGERPRINT_ERROR = "Fingerprint is not setup in device. Please go to device settings and setup fingerprint before proceeding";
 
 /*
     Logging Variables

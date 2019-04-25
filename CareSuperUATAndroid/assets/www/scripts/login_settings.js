@@ -328,14 +328,14 @@ function showFPDialog() {
 
 	function successCallback() {
 
-		$("#fp-message").html("Fingerprint set up successful!!</br>It has been set as the default login style and can be changed any time from the app menu");
+		$("#fp-message").html(FINGERPRINT_SUCCESSMSG);
 		$("#fingerprint-dialog").foundation("open");
 
 	}
 
 	function errorCallback(err) {
 		if (!(err == "Cancelled")) {
-			$("#message-to-display").html(INVALID_MAX_ATTEMPTS);
+			$("#message-to-display").html(FINGERPRINT_ERROR);
 			$("#alert-dialog").foundation("open");
 		}
 	}
