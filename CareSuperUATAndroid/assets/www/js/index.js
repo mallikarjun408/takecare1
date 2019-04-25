@@ -143,7 +143,7 @@ function navigateToWebAppLogin() {
 
       //  var requestURL = "https://uat.services.mercerfinancialservices.com/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
 
-     var requestURL = authorizationUrl+ "client_id=mercersuperapp&redirect_uri="+app_redirect_url+
+     var requestURL = authorizationUrl+ "client_id=caresuperapp&redirect_uri="+app_redirect_url+
 
                                 "&pwd_reset_redirect_uri="+encodeURIComponent(pwd_reset_redirect_uri)+"?login_uri="+loginUrl+
 
@@ -230,7 +230,7 @@ function onBrowserLoadStart(event) {
     //under the function handleOpenURL without the http prefix
     //In android for some reason handleOpenURL is not invoked hence the browserload hack
 
-    if (urlStringValue.indexOf("http://mercersuperapp://") >= 0) {
+    if (urlStringValue.indexOf("http://caresuperapp://") >= 0) {
 
         localStorage.setItem("isManualClose", true);
         inAppBrowserObject.close();//closing the instance of inappbrowser

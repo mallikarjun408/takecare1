@@ -1,6 +1,6 @@
 /*
  MST URLS
-*/
+
 
 
 var authorizationUrl =  "https://pf-mst.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2?";
@@ -8,17 +8,17 @@ var authTokenUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com/as/tok
 var app_redirect_url = "mercersuperapp://callback.html";
 var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 
-
+*/
 /*
  CareSuper URLS
-
+*/
 
 
 var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2?";
 var authTokenUrl = "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/token.oauth2";
 var app_redirect_url = "caresuperapp://callback.html";
 var loginUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com";
-*/
+
 
 // index.js
 var code_challenge_method = "S256";
