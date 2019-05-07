@@ -247,7 +247,7 @@ function navigateToWebAppLogin() {
 
                                 "&code_challenge="+codeChallengeValue+"&code_challenge_method="+code_challenge_method+"&response_type=code";
 
-            var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close,clearsessioncache=yes";
+            var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close";
             console.log("requestURL  "+ requestURL);
             inAppBrowserObject = cordova.InAppBrowser.open(requestURL, '_blank', option);
             inAppBrowserObject.addEventListener('loadstart', onBrowserLoadStart);

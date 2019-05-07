@@ -11,7 +11,7 @@ var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 */
 /*
  CareSuper Staging URLS
-
+*/
 
 
 var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2";
@@ -26,13 +26,13 @@ var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgi
 var baseUrl = "https://uat.services.mercerfinancialservices.com";
 var AEMConfigURL = "http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
 
-*/
+
 
 var ErrorCodeConfigUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text";
 /*
  CareSuper PROD URLS
 
-*/
+
 
 var authorizationUrl=  "https://login.identity.caresuper.com.au/as/authorization.oauth2";
 var authTokenUrl    = "https://login.identity.caresuper.com.au/as/token.oauth2";
@@ -44,7 +44,7 @@ var appContactusUrl =  "https://www.youraccountonline.com/bin/mercer-services/os
 var aboutTheAppUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody";
 var baseUrl         =  "https://services.mercerfinancialservices.com";
 
-
+*/
 
 
 

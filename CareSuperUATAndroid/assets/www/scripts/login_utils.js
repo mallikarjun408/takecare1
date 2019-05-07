@@ -153,7 +153,7 @@ function navigateToDashboard() {
                     } else {
                         $("#user-balance-para").html(ERROR_MESSGE);
                     } */
-                   logException("Messge:: navigateToDashboard  failure callback "+JSON.stringify(data)+" || FileName:: quick-login.js || Method:: navigateToDashboard()");
+                   logException("Messge:: navigateToDashboard  failure callback "+JSON.stringify(error)+" || FileName:: quick-login.js || Method:: navigateToDashboard()");
                    var errorCode = tokenExpiresError(error);
                    if (errorCode != null && errorCode == "invalid_grant") {
                         getRefreshToken("navigate_dashboard");

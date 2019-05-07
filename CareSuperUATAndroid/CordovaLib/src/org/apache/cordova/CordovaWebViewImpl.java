@@ -43,6 +43,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static org.apache.cordova.URLConstants.PROD_CONTACTUS_URL;
+import static org.apache.cordova.URLConstants.STAGING_CONTACTUS_URL;
+
 /**
  * Main class for interacting with a Cordova webview. Manages plugins, events, and a CordovaWebViewEngine.
  * Class uses two-phase initialization. You must call init() before calling any other methods.
@@ -648,10 +651,10 @@ public class CordovaWebViewImpl implements CordovaWebView {
                 loadUrlIntoView(URLConstants.REDIRECT_TO_QUICKLOGIN,true);
             } else if(url.contains(URLConstants.SURVEY_URL)){
                 Log.i("Survey Url", "caught");  //!url.contains("secure.superfacts.com") &&
-            } else if(!url.contains("secure.superfacts.com") && !url.contains("youraccountonline.com") &&
+            } else if((!url.contains("secure.superfacts.com") && !url.contains("youraccountonline.com") &&
                     !url.contains("file:///") && !url.contains("tel:") &&
                     !url.contains("sms:") && !url.contains("mailto:") &&
-                    !url.contains("geo:") && !url.contains("market:") ){
+                    !url.contains("geo:") && !url.contains("market:")) || (url.equalsIgnoreCase(STAGING_CONTACTUS_URL) || url.equalsIgnoreCase(PROD_CONTACTUS_URL))) {
                 final Dialog alertDialog = new Dialog(cordova.getActivity());
                 alertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alertDialog.setContentView(R.layout.dialog_layout);
