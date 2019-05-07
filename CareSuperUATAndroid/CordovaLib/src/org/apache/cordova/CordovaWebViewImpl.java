@@ -654,7 +654,7 @@ public class CordovaWebViewImpl implements CordovaWebView {
             } else if((!url.contains("secure.superfacts.com") && !url.contains("youraccountonline.com") &&
                     !url.contains("file:///") && !url.contains("tel:") &&
                     !url.contains("sms:") && !url.contains("mailto:") &&
-                    !url.contains("geo:") && !url.contains("market:")) || (url.equalsIgnoreCase(STAGING_CONTACTUS_URL) || url.equalsIgnoreCase(PROD_CONTACTUS_URL))) {
+                    !url.contains("geo:") && !url.contains("market:")) || (url.contains(STAGING_CONTACTUS_URL)) ) {
                 final Dialog alertDialog = new Dialog(cordova.getActivity());
                 alertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alertDialog.setContentView(R.layout.dialog_layout);

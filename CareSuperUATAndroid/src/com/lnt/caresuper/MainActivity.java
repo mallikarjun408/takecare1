@@ -19,9 +19,13 @@
 
 package com.lnt.caresuper;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.crypho.plugins.SecureStorage;
 
@@ -69,6 +73,17 @@ public class MainActivity extends CordovaActivity
         ws.setAppCacheEnabled(false);
         ws.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
+
+
+     /*   wv.setDownloadListener(new DownloadListener() {
+            public void onDownloadStart(String url, String userAgent,
+                                        String contentDisposition, String mimetype,
+                                        long contentLength) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        }); */
         // check for 90days login
         if(mSecureStorage != null) {
             try {
