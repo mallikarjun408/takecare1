@@ -38,12 +38,13 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function () {
         initCrashlytics();
+      //  getConfigValuesFromAEM();
    //
 
         // Check if secure storge is availble
         //@Sagar displaying the splash screen based on platform only
         //Since in iOS the splash screen are displayed in the launchscreen file
-        getConfigValues();
+       // getConfigValues();
         var devicePlatform = device.platform;
         if (devicePlatform == "Android")
             navigator.splashscreen.show();
@@ -110,6 +111,8 @@ var app = {
             'quickLoginType'
         );
 
+
+
         this.receivedEvent('deviceready');
     },
 
@@ -120,6 +123,99 @@ var app = {
 };
 
 app.initialize();
+
+
+function getConfigValuesFromAEM() {
+    var ss = new cordova.plugins.SecureStorage(
+        function() {
+            localStorage.setItem('isDeviceSecure', 'true');
+        },
+        function(error) {
+            console.log('Error : ' + error);
+            localStorage.setItem('isDeviceSecure', 'false');
+        },
+        'my_app'
+    );
+    if (isNetworkAvailable()) {
+        navigator.splashscreen.show();
+        loadConfigValuesFromServer().then(function success(data) {
+            getConfigValues().then(configUrlSuccess(data, ss), fnFailure(ss));
+        }, function error(error) {
+            getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
+        });
+    } else {
+        navigator.splashscreen.hide();
+        $("#message-to-display").html("Please check your internet connection");
+        $("#alert-dialog").foundation("open");
+        $(".index-mercer-logo").css("display", "block");
+        $(".main").css("display", "table"); //must be set as table for center alignment
+        $("#network-loading-failed-message").css("display", "block");
+        $("#inapp-closed-msg").css("display", "none");
+        $("#loading-indicator").css("display", "none");
+        $(".index-network-error-title").html("Please check your internet conenction");
+    }
+}
+
+
+function configUrlSuccess(urlConfigValues, ss) {
+	//setTimeout("navigator.splashscreen.hide()", 2000);
+    navigator.splashscreen.hide();
+
+   /* var jsonStr = localStorage.getItem("configUrlValue");
+    	var jsonObject = null;
+    	if (jsonStr != undefined)
+    		jsonObject = JSON.parse(jsonStr);
+
+    if(localStorage.getItem('UseNewEndpointsAndroid') != jsonObject.UseNewEndpointsAndroid) {
+        clearRequiredData();
+        localStorage.setItem("configUrlValue",urlConfigValues);
+        navigateToWebAppLogin();
+    } else { */
+        //check if quickLoginType is set, If yes then show quickLogin screen else show login screen
+        ss.get(
+            function(value) {
+                //cordova.getAppVersion.getVersionCode(function(versioncode) {
+                   // var appVersionCode = parseInt(versioncode);
+                    var isServiceFirstRun = localStorage.getItem("isServiceFirstRun");
+                    //beyond the app version code 10012 service integration was performed
+                    //hence below that we are navigating the user to the web app login page
+                     if (isServiceFirstRun == "false" && isServiceFirstRun != undefined) {
+                        clearRequiredData();
+                        navigateToWebAppLogin();
+                     } else {
+                        var lastLoginVal = localStorage.getItem("lastLoginDate");
+                        if (lastLoginVal) {
+
+                            var lastLoginDate = new Date(lastLoginVal);
+                            var dateDifference = getDateDifference(lastLoginDate, new Date());
+                            if (dateDifference >= 90) {
+                                clearRequiredData();
+                                navigateToWebAppLogin();
+                            } else {
+                                window.location = "html/quick-login.html";
+                            }
+
+                        } else {
+                            clearRequiredData();
+                            navigateToWebAppLogin();
+                        }
+                    }
+               // });
+            },
+            function(error) {
+                console.log('Error : ' + error);
+                //hiding the splash screen after 3 secs
+                //if (devicePlatform == "Android")
+                    //setTimeout("navigator.splashscreen.hide()", 2000);
+                    navigator.splashscreen.hide();
+                //Instead of navigating to the login page the user is navigated directly to the
+                //web app login page
+                navigateToWebAppLogin();
+            },
+            'quickLoginType'
+        );
+	//}
+}
 
 function navigateToWebAppLogin() {
   /*  var mm = {"encodedContent":"ZGlzcGxheUFsZXJ0cz15ZXM=","plainContent":"displayAlerts=no"};
@@ -143,7 +239,7 @@ function navigateToWebAppLogin() {
 
       //  var requestURL = "https://uat.services.mercerfinancialservices.com/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
 
-     var requestURL = authorizationUrl+ "client_id=caresuperapp&redirect_uri="+app_redirect_url+
+     var requestURL =  authorizationUrl + "?client_id=caresuperapp&redirect_uri="+ app_redirect_url+
 
                                 "&pwd_reset_redirect_uri="+encodeURIComponent(pwd_reset_redirect_uri)+"?login_uri="+loginUrl+
 
@@ -230,7 +326,7 @@ function onBrowserLoadStart(event) {
     //under the function handleOpenURL without the http prefix
     //In android for some reason handleOpenURL is not invoked hence the browserload hack
 
-    if (urlStringValue.indexOf("http://caresuperapp://") >= 0) {
+    if (urlStringValue.indexOf("caresuperapp://callback.html?") >= 0) {
 
         localStorage.setItem("isManualClose", true);
         inAppBrowserObject.close();//closing the instance of inappbrowser
@@ -252,7 +348,7 @@ function onBrowserLoadStart(event) {
        // var appCode = urlStringValue.substring(urlStringValue.lastIndexOf("code") + 5, urlStringValue.lastIndexOf("scope") - 1)
             var requestData = {
                 code: appCode,
-                client_id: "mercersuperapp",
+                client_id: "caresuperapp",
                 code_verifier: codeVerifier,
                 redirect_uri: app_redirect_url,
                 grant_type: "authorization_code"
@@ -261,7 +357,7 @@ function onBrowserLoadStart(event) {
             console.log(" requestData  ===   "+JSON.stringify(requestData));
             $.ajax({
                 type: "POST",
-                url: authTokenUrl,
+                url: (localStorage.getItem(TOKEN_URL) || authTokenUrl),
                 timeout: 20000,
                 data: requestData,
                 headers: {
@@ -304,6 +400,11 @@ function onBrowserLoadStart(event) {
              var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close";
              cordova.InAppBrowser.open(urlStringValue, browserTarget, option);
              navigateToWebAppLogin();
+        } else if(urlStringValue == ('https://www.caresuper.com.au/login')) {
+             browserTarget = '_system';
+             var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close";
+             cordova.InAppBrowser.open(urlStringValue, browserTarget, option);
+             navigateToWebAppLogin();
         } else {
             navigator.notification.activityStart("Please wait", "Loading....");
         }
@@ -335,7 +436,7 @@ function onBrowserLoadStop(event) {
  * * @param data Data obtained on successful request
  */
 function getTokenSuccess(data) {
-console.log("getTokenSuccess   "+JSON.stringify(data));
+    console.log("getTokenSuccess   "+JSON.stringify(data));
     $("#overlay-div").css("display", "none");
 
     if (data.access_token && data.refresh_token) {

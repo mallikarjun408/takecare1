@@ -26,6 +26,7 @@ buildscript {
         mavenCentral()
         maven{
             url 'https://maven.fabric.io/public'
+
         }
 
     }
@@ -184,8 +185,8 @@ android {
       abortOnError false;
     }
 
-    compileSdkVersion cdvCompileSdkVersion
-    buildToolsVersion cdvBuildToolsVersion
+    compileSdkVersion 24
+    buildToolsVersion '28.0.3'
 
     if (Boolean.valueOf(cdvBuildMultipleApks)) {
         productFlavors {
@@ -253,17 +254,14 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation fileTree(include: '*.jar', dir: 'libs')
     // SUB-PROJECT DEPENDENCIES START
-    implementation(project(path: "CordovaLib"))
+    implementation project(path: 'CordovaLib')
     // SUB-PROJECT DEPENDENCIES END
-
-    implementation "com.google.firebase:firebase-core:16.0.8"
+    implementation 'com.google.firebase:firebase-core:16.0.8'
     //noinspection DuplicatePlatformClasses
-    implementation "org.json:json:20171018"
-    implementation "com.crashlytics.sdk.android:crashlytics:2.9.9"
-
-
+    implementation 'org.json:json:20171018'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
 }
 
 def promptForReleaseKeyPassword() {

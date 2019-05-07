@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\font_filson_pro_bold1.ttf.flat",
+        "source": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\packaged_res\\debug\\font\\filson_pro_bold1.ttf"
+    },
+    {
+        "merged": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\font_filson_pro_book.ttf.flat",
+        "source": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\packaged_res\\debug\\font\\filson_pro_book.ttf"
+    },
+    {
+        "merged": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_dialog_layout.xml.flat",
+        "source": "E:\\projects\\LNT-MERCER\\takecare1\\CareSuperUATAndroid\\CordovaLib\\build\\intermediates\\packaged_res\\debug\\layout\\dialog_layout.xml"
+    }
+]

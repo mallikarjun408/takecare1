@@ -10,14 +10,43 @@ var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 
 */
 /*
- CareSuper URLS
-*/
+ CareSuper Staging URLS
 
 
-var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2?";
+
+var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2";
+                        // https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2
 var authTokenUrl = "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/token.oauth2";
 var app_redirect_url = "caresuperapp://callback.html";
 var loginUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com";
+var appSecurityUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody ";
+var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
+var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
+var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
+var baseUrl = "https://uat.services.mercerfinancialservices.com";
+var AEMConfigURL = "http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
+
+*/
+
+var ErrorCodeConfigUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text";
+/*
+ CareSuper PROD URLS
+
+*/
+
+var authorizationUrl=  "https://login.identity.caresuper.com.au/as/authorization.oauth2";
+var authTokenUrl    = "https://login.identity.caresuper.com.au/as/token.oauth2";
+var app_redirect_url= "caresuperapp://callback.html";
+var loginUrl        =  "https://login.identity.caresuper.com.au";
+var appSecurityUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody";
+var appSupportUrl   =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
+var appContactusUrl =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
+var aboutTheAppUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody";
+var baseUrl         =  "https://services.mercerfinancialservices.com";
+
+
+
+
 
 
 // index.js
@@ -30,21 +59,21 @@ var AEMPageRequsetUrl = "https://www.youraccountonline.com/secure";
 var loginBridgeUrl = "https://secure.superfacts.com/web/mst/loginbridge.tpz";
 
 // Login_Utils
-var baseUrl = "https://uat.services.mercerfinancialservices.com";
+
 var websiteUrl =  baseUrl+"/v1/website";
 var customerUrl = baseUrl+"/v1/customer";
 var customerBalanceUrl = baseUrl+"/v1/customer/balance";
 
 // App Setting Urls
 
-var appSecurityUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody ";
+// var appSecurityUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody ";
 // <prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody
-var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
-var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
+// var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
+// var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
 // <prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody
 
 
-var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
+// var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
 //<prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody
 // config URL
 
@@ -73,4 +102,31 @@ var FINGERPRINT_ERROR = "Fingerprint is not setup in device. Please go to device
     Logging Variables
 */
 
-var isDebug = true;
+var isDebug = false;
+
+
+
+
+/*
+
+{
+	"AuthEndpoint": "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2",
+	"TokenEndpoint": "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/token.oauth2",
+	"MercerAPIEndpoint": "https://uat.services.mercerfinancialservices.com",
+	"clientid": "caresuperapp",
+	"callbackurl": "caresuperapp://callback.html",
+	"EnableCrashlytics": "true",
+	"CrashlyticsNotificationEmailAdd": "test@mercer.com",
+	"responseCode": "200",
+	"responseMessage": "Success"
+}
+*/
+
+
+var LOGIN_URL = "login_url";
+var TOKEN_URL = "token_url";
+var MERCER_API = "mercer_api";
+var CLIENT_ID = "client_id";
+var CALLBACK_URL = "callback_url";
+var ENABLE_CRASHLYTICS = "enable_crashlytics";
+

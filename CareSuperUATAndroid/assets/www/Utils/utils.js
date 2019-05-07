@@ -73,30 +73,32 @@ function tokenExpiresError(errorResponse){
 }
 
 function getConfigValues(){
-    $.ajax({
+
+   return new Promise(function(resolve,reject) {
+            $.ajax({
             type: "GET",
-            url: "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text",
+            url: ErrorCodeConfigUrl, //"https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text",
             timeout: 20000,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json'
             },
             success: function (data) {
-                console.log("success response "+JSON.stringify(data));
-                Config = data;
-                localStorage.setItem("configValue",JSON.stringify(Config));
-
-                //getTokenSuccess(data);
+                if(data.responseCode == 200) {
+                    console.log("success response "+JSON.stringify(data));
+                    Config = data;
+                    localStorage.setItem("configValue",JSON.stringify(data));
+                    resolve(data);
+                }
             },
             error: function (error) {
                 console.log("error response "+JSON.stringify(error));
                 var mm = {"encodedContent":"ZGlzcGxheUFsZXJ0cz15ZXM=","plainContent":"displayAlerts=no"};
                 localStorage.setItem("configValue",JSON.stringify(mm));
-                //getTokenFailure(error);
-               // $("#message-to-display").html(ERROR_MESSGE);
-               // $("#alert-dialog").foundation("open");
+                reject(JSON.stringify(error));
             }
         });
+    });
 }
 
 function navigateToLoginPage() {
@@ -168,3 +170,40 @@ function doCrash () {
     }
 }
 
+
+
+function loadConfigValuesFromServer() {
+
+    return new Promise(function(resolve,reject) {
+        $.ajax({
+                type: "GET",
+                url: AEMConfigURL,
+                timeout: 20000,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept': 'application/json'
+                },
+                success: function (data) {
+                    console.log("success response "+JSON.stringify(data));
+                    if (data != null) {
+                        if (data.responseCode == 200) {
+                            localStorage.setItem(LOGIN_URL,data.AuthEndpoint);
+                            localStorage.setItem(TOKEN_URL,data.TokenEndpoint);
+                            localStorage.setItem(MERCER_API,data.MercerAPIEndpoint);
+                            localStorage.setItem(CLIENT_ID,data.clientid);
+                            localStorage.setItem(CALLBACK_URL,data.callbackurl);
+                            localStorage.setItem(ENABLE_CRASHLYTICS,data.EnableCrashlytics);
+                        }
+                        resolve(JSON.stringify(data));
+                    }else {
+                        reject("");
+                    }
+                },
+                error: function (error) {
+                    console.log("error response "+JSON.stringify(error));
+                    reject(error);
+                }
+            });
+    });
+
+}

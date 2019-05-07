@@ -10,7 +10,7 @@ function onDeviceReady(){
 
 function backButtonHandler() {
     //on this page it is valid to navigate the user back to the quick login page
-    window.location = "../html/quick-login.html"
+    window.location = "../html/quick-login.html";
 }
 
 function performLoginRequest() {

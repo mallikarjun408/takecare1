@@ -7,6 +7,10 @@
 package org.apache.cordova;
 
 public final class R {
+    public static final class font {
+        public static int filson_pro_bold1 = 0x7f0a0001;
+        public static int filson_pro_book = 0x7f0a0002;
+    }
     public static final class id {
         public static int btnNegative = 0x7f0c0001;
         public static int btnPositive = 0x7f0c0002;

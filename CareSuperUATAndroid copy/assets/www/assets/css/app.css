@@ -1,0 +1,671 @@
+/*--------------------------------------------------------------------------------------------
+Project Name v1.0.0 - Application CSS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: https://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: "evo_icon_font_site";
+  src: url("../fonts/evo-icon-font-site.eot");
+  src: url("../fonts/evo-icon-font-site.eot?#iefix") format("embedded-opentype"), url("../fonts/evo-icon-font-site.woff") format("woff"), url("../fonts/evo-icon-font-site.ttf") format("truetype"), url("../fonts/evo-icon-font-site.svg#evo_icon_font_site") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="evo-icon-site-"] {
+  font-family: "evo_icon_font_site";
+}
+
+/*=== STYLES ===============================================================================*/
+/*--- GLOBAL -------------------------------------------------------------------------------*/
+/*--- STYLES SECTION HEADER ----------------------------------------------------------------*/
+/*--- KITCHEN SINK -------------------------------------------------------------------------*/
+.evo-grid-demo .row {
+  border: 1px solid #e6e6e6;
+  margin-bottom: 1rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.evo-grid-demo .columns {
+  background-color: #f0f0f0;
+}
+.evo-grid-demo .columns:nth-child(2n) {
+  background-color: #dbdbdb;
+}
+
+.evo-block-grid-demo .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.evo-site--helpers-keyline-example .evo-keyline-right {
+  border-color: #b3b3b3;
+  min-height: auto;
+}
+.evo-site--helpers-keyline-example [data-equalizer-watch] {
+  min-height: 17.25rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .evo-site--helpers-keyline-example [data-equalizer-watch] {
+    min-height: auto;
+  }
+}
+@media screen and (min-width: 48em) and (max-width: 64em) {
+  .evo-site--helpers-keyline-example .evo-keyline-right {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #b3b3b3;
+  }
+}
+
+.evo-callout-dimensions-demo {
+  height: 12.5rem;
+  width: 100%;
+}
+.evo-callout-dimensions-demo p {
+  width: 12.5rem !important;
+}
+
+.evo-hyphen-demo {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.evo-word-break-container-dimensions-demo {
+  height: 3.125rem;
+  width: 12.5rem;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Conversational Form v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-conversational-form .evo-conversational-form-ctn {
+  margin: 0 0 0.625rem 0;
+}
+.evo-conversational-form .evo-conversational-form-item {
+  float: left;
+}
+.evo-conversational-form label {
+  font-size: 1.5625rem;
+  line-height: 2;
+  font-family: proxima_nova_rgregular;
+  color: #808080;
+}
+.evo-conversational-form input,
+.evo-conversational-form select {
+  border-radius: 0;
+  background-color: #f0f0f0;
+  border: 0;
+  border-bottom: 2px solid #002C77;
+  color: #002C77;
+  font-size: 1.5625rem;
+  margin-bottom: 0;
+}
+.evo-conversational-form input:hover,
+.evo-conversational-form select:hover {
+  border-bottom-color: #003a9e;
+}
+.evo-conversational-form label,
+.evo-conversational-form input,
+.evo-conversational-form select {
+  display: inline;
+  width: auto;
+}
+.evo-conversational-form input {
+  transition: width 0.25s;
+  width: 5rem;
+  min-width: 3.4375rem;
+  max-width: 18.75rem;
+  padding: 0 0.375rem;
+}
+.evo-conversational-form input:focus {
+  border: 0;
+  border-bottom: 2px solid #002C77;
+}
+.evo-conversational-form select {
+  min-width: 10.625rem;
+  padding: 0 0.375rem;
+}
+.evo-conversational-form select:focus {
+  box-shadow: 0 0 5px 0 #cccccc;
+  border-bottom-color: #003a9e;
+  background-color: #FEFEFE;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Fat Footer v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-fat-footer .evo-footer-content-section {
+  background-color: #fafafa;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e6e6e6;
+  padding-top: 1.25rem;
+  min-height: 12.5rem;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"] {
+  color: #002C77;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
+  color: #002C77;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
+  color: #002C77;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
+  color: #002C77;
+}
+@media screen and (min-width: 48em) {
+  .evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+    text-align: left;
+  }
+}
+.evo-fat-footer .evo-footer-content-section .evo-fat-footer-logo {
+  margin-bottom: 1.5625rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-fat-footer .evo-footer-content-section .evo-fat-footer-logo {
+    text-align: left;
+  }
+}
+.evo-fat-footer .evo-footer-link-hdr {
+  color: #000000;
+  font-size: 0.75rem;
+}
+.evo-fat-footer .evo-footer-links {
+  text-align: center;
+}
+.evo-fat-footer .evo-footer-links li a {
+  color: #002C77;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+}
+.evo-fat-footer .evo-footer-links li a:hover {
+  color: #002666;
+}
+@media screen and (min-width: 48em) {
+  .evo-fat-footer .evo-footer-links {
+    text-align: left;
+  }
+  .evo-fat-footer .evo-footer-links li {
+    padding-bottom: 0.3125rem;
+  }
+}
+.evo-fat-footer .evo-fat-footer-brand-bar {
+  background-color: #e6e6e6;
+  min-height: 3.125rem;
+}
+.evo-fat-footer .evo-fat-footer-brand-bar small {
+  color: #808080;
+}
+.evo-fat-footer .evo-footer-copyright {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-fat-footer .evo-footer-copyright {
+    text-align: left;
+  }
+}
+.evo-fat-footer .evo-brand-bar-footer-logo {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.evo-fat-footer .evo-brand-bar-footer-logo a {
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-fat-footer .evo-brand-bar-footer-logo {
+    text-align: right;
+  }
+  .evo-fat-footer .evo-brand-bar-footer-logo a {
+    text-align: left;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Item Selection Panel v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-item-selection-panel {
+  text-align: center;
+}
+.evo-item-selection-panel ul li {
+  padding-bottom: 0.9375rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon {
+  border-radius: 100%;
+  background-clip: padding-box;
+  border: 0.125rem solid #BFBFBF;
+  color: #404040;
+  padding: 1.375rem;
+  width: auto;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon.evo-icon-size-small {
+  padding: 0.625rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon.evo-icon-size-medium {
+  padding: 1rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon.evo-icon-size-large {
+  padding: 1.375rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon.evo-icon-size-x-large {
+  padding: 1.75rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-label {
+  margin: 0.625rem auto 0 auto;
+  font-family: "proxima_nova_rgregular", arial, Tahoma, Geneva, sans-serif;
+  font-size: 1rem;
+  color: #808080;
+  line-height: 1.25;
+  display: block;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-checkbox {
+  position: absolute;
+  left: -624.9375rem;
+  width: 0;
+  height: 0;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon {
+  box-shadow: 0 0.125rem 0.375rem 0 rgba(10, 10, 10, 0.25);
+  border-width: 0;
+  color: #FEFEFE;
+  padding: 1.5rem;
+  background-color: #002C77;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon.evo-icon-size-small {
+  padding: 0.75rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon.evo-icon-size-medium {
+  padding: 1.125rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon.evo-icon-size-large {
+  padding: 1.5rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon.evo-icon-size-x-large {
+  padding: 1.875rem;
+}
+.evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-label {
+  font-family: "proxima_nova_ltsemibold", arial, Tahoma, Geneva, sans-serif;
+  color: #002C77;
+}
+.evo-item-selection-panel[data-evo-item-selection-panel-type="photo"] .evo-item-selection-panel-item .evo-item-selection-panel-item-icon {
+  box-sizing: content-box;
+  padding: 0.375rem;
+  width: 5rem;
+  height: 5rem;
+}
+.evo-item-selection-panel[data-evo-item-selection-panel-type="photo"] .evo-item-selection-panel-item .evo-item-selection-panel-item-label {
+  margin: 0.5rem auto 0 auto;
+}
+.evo-item-selection-panel[data-evo-item-selection-panel-type="photo"] .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon {
+  border-width: 0.125rem;
+  border-color: #002C77;
+  background: none;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Pricing Table v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-pricing-table [class*="small-up-"] {
+  background-color: #f0f0f0;
+  font-size: 1.0625rem;
+  padding: 0.625rem;
+  margin: 0;
+  margin-bottom: 0.125rem;
+}
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-amt,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-break-down-amt,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-total-amt {
+  text-align: right;
+}
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-break-down-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-total-label {
+  text-transform: none;
+}
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-value-label {
+  font-size: 0.75rem;
+  position: relative;
+}
+.evo-pricing-table .evo-pricing-table-category-label {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.evo-pricing-table .evo-pricing-table-category-label .evo-pricing-table-item-label {
+  color: #999999;
+  top: 0.8125rem;
+}
+.evo-pricing-table .evo-pricing-table-item-amt .evo-pricing-table-value-label {
+  color: #999999;
+  text-align: right;
+  top: -3px;
+}
+.evo-pricing-table .evo-pricing-table-break-down-row {
+  background-color: #BFBFBF;
+}
+.evo-pricing-table .evo-pricing-table-total-row {
+  background-color: #002C77;
+}
+.evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-label {
+  color: #FEFEFE;
+}
+.evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-amt {
+  color: #FEFEFE;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Showcase Panel v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-showcase-panel {
+  box-shadow: 0 3px 5px 0 rgba(10, 10, 10, 0.25);
+  background-color: #FEFEFE;
+}
+.evo-showcase-panel .evo-showcase-panel-item {
+  min-height: 6.25rem;
+  padding: 0.625rem 0;
+  text-align: center;
+  color: gray;
+}
+.evo-showcase-panel .evo-showcase-panel-item [class^="evo-icon-"] {
+  top: 4px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-label {
+  font-family: "proxima_nova_rgbold", arial, Tahoma, Geneva, sans-serif;
+  line-height: 1;
+}
+.evo-showcase-panel .evo-showcase-panel-item-label sup {
+  position: relative;
+  font-family: "proxima_nova_rgregular", arial, Tahoma, Geneva, sans-serif;
+}
+.evo-showcase-panel .evo-showcase-panel-item-sub-label {
+  position: relative;
+  font-family: "proxima_nova_ltsemibold", arial, Tahoma, Geneva, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.evo-showcase-panel .evo-showcase-panel-item-sub-text {
+  display: block;
+  font-size: 0.6875rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large {
+  padding-top: 1.4375rem;
+  padding-bottom: 0.9375rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-label {
+  font-size: 3rem;
+  letter-spacing: -0.125rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-label sup {
+  font-size: 0.875rem;
+  top: -22px;
+  left: -3px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-sub-label {
+  top: 0;
+  left: -9px;
+  letter-spacing: 0;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-sub-text {
+  position: relative;
+  top: -7px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-label {
+  font-size: 1.625rem;
+  letter-spacing: -0.0125rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-label sup {
+  font-size: 0.6875rem;
+  top: -9px;
+  left: -1px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-sub-label {
+  top: 0;
+  left: -5px;
+  letter-spacing: 0;
+  font-family: "proxima_nova_rgbold", arial, Tahoma, Geneva, sans-serif;
+  text-transform: lowercase;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] {
+  background-color: #002C77;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item {
+  color: #FEFEFE;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item a {
+  color: #FEFEFE;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item [class^="evo-icon-"] {
+  color: #FEFEFE;
+}
+.evo-showcase-panel[data-evo-showcase-panel-fixed] {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution - Core v4.0.0
+Social Media Badges v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-social-media-badges-ctn a[class^="evo-icon-"] {
+  color: #002C77;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
+  color: #002C77;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
+  color: #002C77;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
+  color: #002C77;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Stepper v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-stepper::before, .evo-stepper::after {
+  content: ' ';
+  display: table;
+}
+.evo-stepper::after {
+  clear: both;
+}
+.evo-stepper .evo-stepper-item {
+  border-radius: 1.875rem;
+  background-clip: padding-box;
+  display: block;
+  float: left;
+  margin: 0.1875rem 0.625rem 0.1875rem 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: #cccccc;
+}
+.evo-stepper .evo-stepper-item:last-child {
+  margin-right: 0;
+}
+.evo-stepper [data-evo-stepper-state="complete"] {
+  background-color: #e6e6e6;
+}
+.evo-stepper [data-evo-stepper-state="active"] {
+  margin: 0 0.625rem 0 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #002C77;
+}
+
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v4.0.0
+Thin Footer v1.0.1 - SASS
+DATE: May 26, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-thin-footer .evo-footer-content-section {
+  background-color: #FEFEFE;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e6e6e6;
+  padding-top: 1.25rem;
+  min-height: 5rem;
+}
+.evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"] {
+  color: #002C77;
+}
+.evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
+  color: #002C77;
+}
+.evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
+  color: #002C77;
+}
+.evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
+  color: #002C77;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+.evo-thin-footer .evo-footer-content-section .evo-thin-footer-logo {
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-content-section .evo-thin-footer-logo {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+.evo-thin-footer .evo-footer-links {
+  float: none;
+  text-align: center;
+}
+.evo-thin-footer .evo-footer-links li a {
+  font-size: 0.875rem;
+  color: #002C77;
+}
+.evo-thin-footer .evo-footer-links li a:hover {
+  color: #002666;
+}
+@media screen and (max-width: 47.9375em) {
+  .evo-thin-footer .evo-footer-links {
+    float: none;
+  }
+  .evo-thin-footer .evo-footer-links li {
+    border: 0;
+    float: none;
+    line-height: 1.875rem;
+    margin: 0;
+    padding: 0;
+  }
+  .evo-thin-footer .evo-footer-links li a {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-links {
+    float: right;
+    text-align: left;
+  }
+  .evo-thin-footer .evo-footer-links::before, .evo-thin-footer .evo-footer-links::after {
+    content: ' ';
+    display: table;
+  }
+  .evo-thin-footer .evo-footer-links::after {
+    clear: both;
+  }
+  .evo-thin-footer .evo-footer-links li {
+    border-right-color: #b3b3b3;
+  }
+}
+.evo-thin-footer .evo-thin-footer-brand-bar {
+  background-color: #e6e6e6;
+  min-height: 3.125rem;
+}
+.evo-thin-footer .evo-thin-footer-brand-bar small {
+  color: #808080;
+}
+.evo-thin-footer .evo-footer-copyright {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-copyright {
+    text-align: left;
+  }
+}
+.evo-thin-footer .evo-footer-logo {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.evo-thin-footer .evo-footer-logo a {
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-logo {
+    text-align: right;
+  }
+  .evo-thin-footer .evo-footer-logo a {
+    text-align: left;
+  }
+}

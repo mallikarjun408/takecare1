@@ -1,0 +1,299 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Enter a 4-digit device PIN</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<link href="../css/common.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="containerBody" onload="onLoadScript()">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container screenblockStyle">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo titlebarStyle">
+						<span class="backIconStyle" onclick="onBackClick()">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small backIconViewStyle" ></i>
+						</span>
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content containerBody" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row single-form-container">
+						<form data-abide novalidate>
+							<label class="enterPin textbold" id="pinLabel"></label>
+
+							<div class="pin-input-div-container">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="FirstDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="SecondDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="ThirdDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" maxlength="1" id="FourthDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+							</div>
+
+						</form>
+
+					</div>
+					<!-- Pin incorrectly entered reveal - BEGINS -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal display_none" id="wrong-pin-reveal" data-reveal data-options="closeOnClick:false">
+							<h3 class="popupTextBold">Choose a Stronger PIN </h3>
+							<p class="custom-reveal-para popupTextNormal" style="margin-bottom: 1rem;">It should not contain the following:</p>
+							<ul class="popupTextNormal" style="padding-left: 0.6rem;">
+								<li>Repeated numbers e.g.
+									<b> 1111, 2222</b>
+								</li>
+								<li>Sequential numbers e.g.
+									<b> 1234, 9876</b>
+								</li>
+							</ul>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn retrybtn popupTextNormal" onclick="okclicked()" data-close>Retry</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- Pin incorrectly entered reveal - ENDS -->
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+
+
+
+					<!--  *********************************** -->
+					<!-- from change_pin-enter_current_pin.html-->
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog_current_pin" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="message-to-display_current_pin"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="okclicked()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+					<!-- MAX ATTEMTPS DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="max-attempts-alert-dialog" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="max-attempts-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<div class="revealBg"></div>
+
+					<!-- MAX ATTEMTPS DIALOG END -->
+					<!-- from change_pin-enter_current_pin.html-->
+					<!--  *********************************** -->
+
+					<!--  *********************************** -->
+					<!-- from change_pin-enter_new_pin.html
+					<div class="small-12 medium-8 columns display_none">
+						<div class="custom-revel-container reveal evo-reveal" id="wrong-pin-reveal" data-reveal data-options="closeOnClick:false">
+							<h3 class="popupTextBold">Choose a Stronger PIN </h3>
+							<p class="custom-reveal-para popupTextNormal" style="margin-bottom: 1rem;">It should not contain the following:</p>
+							<ul class="popupTextNormal" style="padding-left: 0.6rem;">
+								<li>Repeated numbers e.g.
+									<b> 1111, 2222</b>
+								</li>
+								<li>Sequential numbers e.g.
+									<b> 1234,9876</b>
+								</li>
+							</ul>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn retrybtn popupTextNormal" data-close onclick="okclicked()">Retry</button>
+							</div>
+
+						</div>
+					</div> -->
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog_new_pin" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="message-to-display_new_pin"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="okclicked()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+					<!-- from change_pin-enter_new_pin.html-->
+					<!--  *********************************** -->
+
+					<!--  *********************************** -->
+					<!-- from change_pin-confirm_new_pin.html-->
+
+					<!-- Change pin success reveal - BEGINS -->
+
+					<div class="small-12 medium-8 columns display_none">
+						<div class="custom-revel-container reveal evo-reveal" id="change-pin-success-reveal" data-reveal data-options="closeOnClick:false">
+							<h3 class="popupTextBold"> Success! </h3>
+							<p class="custom-reveal-para popupTextNormal">Your new PIN has been created.</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="onOKClick()">Ok</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- Change pin success reveal - ENDS -->
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog_conform_new_pin" data-reveal data-options="closeOnClick:false">
+						<p class="custom-reveal-para popupTextNormal" id="message-to-display_confirm_new_pin"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="onBackClick()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+					<!-- from change_pin-confirm_new_pin.html-->
+					<!--  *********************************** -->
+
+
+
+					<!-- Choose stronger pin reveal - BEGINS -->
+
+					<div class="small-12 medium-8 columns display_none">
+						<div class="custom-revel-container reveal evo-reveal" id="choose-stronger-pin-reveal" data-reveal data-options="closeOnClick:false">
+							<h3 class="popupTextBold">Choose a stronger PIN </h3>
+							<p class="custom-reveal-para popupTextNormal">It should not contain repeated or successive numbers
+								<br/>
+								<b> e.g.1234 or 1111. </b>
+							</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="okclicked()" data-close>Retry</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- Choose stronger pin reveal - ENDS -->
+					<!-- Pin doesn't match - BEGINS -->
+					<br/>
+
+					<div class="small-12 medium-8 columns display_none" id="ex5" class="modal">
+						<div class="custom-revel-container reveal evo-reveal" id="pin-doesnt-match-reveal" data-reveal data-options="closeOnClick:false">
+							<h3 class="popupTextBold">Your PIN doesn't match </h3>
+							<p class="custom-reveal-para popupTextNormal">Please re-enter your PIN.</p>
+							<div class="custom-reveal-btn-container">
+								<button onclick=onBackClick() class="button expanded evo-button custom-reveal-btn popupTextNormal" data-close>Retry</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- Pin doesn't match - ENDS -->
+			</div>
+
+
+			<!-- FINGERPRINT DIALOG START -->
+			<div class="custom-revel-container reveal evo-reveal display_none" id="fingerprint-basic" data-reveal data-options="closeOnClick:false">
+				<p class="custom-reveal-para popupTextNormal">Fingerprint login is available for this device. Would you like to set up Fingerprint login now?</p>
+				<div class="custom-reveal-btn-container">
+					<button class="button expanded evo-button custom-reveal-btn fp-setup-btn popupTextNormal primaryBtn" onclick="openFingerPrintSetup()">Yes</button>
+					<button class="button expanded evo-button custom-reveal-btn fp-dontsetup-btn popupTextNormal secondaryBtn" onclick="navigateToTerms()">No</button>
+				</div>
+			</div>
+			<!-- FINGERPRINT DIALOG END -->
+
+			<!-- ALERT DIALOG START -->
+			<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog_reenter_pin" data-reveal data-options="closeOnClick:false">
+				<p class="custom-reveal-para popupTextNormal" id="message-to-display_reenter_pin"></p>
+				<div class="custom-reveal-btn-container">
+					<button class="button expanded evo-button custom-reveal-btn popupTextNormal" onclick="okclicked()" data-close>OK</button>
+				</div>
+			</div>
+			<!-- ALERT DIALOG END -->
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../Utils/Constants.js"></script>
+	<script type="text/javascript" src="../Utils/utils.js"></script>
+	<script src="../scripts/quickPin_common.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

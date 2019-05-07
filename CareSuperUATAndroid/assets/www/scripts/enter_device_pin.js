@@ -180,6 +180,7 @@ function backButtonHandler() {
 			break;
 		}
 	}
+
 	if (isHamburgerMenuOpen) {
 		if((document.querySelector('body')).classList.contains('is-reveal-open')){
             $(".popupClose").click();

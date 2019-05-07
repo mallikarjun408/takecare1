@@ -5,7 +5,7 @@ var client_secret_id = "s70Pbmr8JNToDgSOfK5TQSDKxVJMEehz";
 var code_challenge_method = "S256";
 //the redirect url for the web application and must not be modified unless informed by server side
 //this URL is configured on the server side
-var app_redirect_url = "mercersuperapp://callback.html";
+var app_redirect_url = "caresuperapp://callback.html";
 
 /**
  * check if login fields are valid if yes then go to quick login set up
@@ -42,7 +42,7 @@ function loginButtoClicked() {
 				localStorage.setItem("isNewLogin", true);
 
 			//	var requestURL = "https://uat.services.mercerfinancialservices.com/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
-			var requestURL = authorizationUrl+ "client_id=mercersuperapp&redirect_uri="+app_redirect_url+
+			var requestURL = authorizationUrl+ "client_id=caresuperapp&redirect_uri="+app_redirect_url+
 
                                             "&pwd_reset_redirect_uri="+pwd_reset_redirect_uri+"?login_uri="+loginUrl+
 
@@ -85,7 +85,7 @@ function onBrowserLoadStart(event) {
 	//under the function handleOpenURL without the http prefix
 	//In android for some reason handleOpenURL is not invoked hence the browserload hack
 
-	if (urlStringValue.indexOf("http://mercersuperapp://") >= 0) {
+	if (urlStringValue.indexOf("http://caresuperapp://") >= 0) {
 
 		console.log("Load Started " + urlStringValue);
 		inAppBrowserObject.close();//closing the instance of inappbrowser

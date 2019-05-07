@@ -2,7 +2,8 @@
 
 $(document).ready(function(){
 
-if((window.history.length == 1) || (window.location.href.match("secure$"))){
+
+    if((window.history.length == 1) || (window.location.href.match("secure$"))){
         $(".urlBack").hide();
     }
     else{ 

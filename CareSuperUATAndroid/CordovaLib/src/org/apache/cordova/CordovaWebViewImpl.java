@@ -647,12 +647,11 @@ public class CordovaWebViewImpl implements CordovaWebView {
             } else if(isContains(url)){
                 loadUrlIntoView(URLConstants.REDIRECT_TO_QUICKLOGIN,true);
             } else if(url.contains(URLConstants.SURVEY_URL)){
-                Log.i("Survey Url", "caught");
-            } else if(!url.contains("secure.superfacts.com") &&
-                    !url.contains("youraccountonline.com") &&
+                Log.i("Survey Url", "caught");  //!url.contains("secure.superfacts.com") &&
+            } else if(!url.contains("secure.superfacts.com") && !url.contains("youraccountonline.com") &&
                     !url.contains("file:///") && !url.contains("tel:") &&
                     !url.contains("sms:") && !url.contains("mailto:") &&
-                    !url.contains("geo:") && !url.contains("market:")){
+                    !url.contains("geo:") && !url.contains("market:") ){
                 final Dialog alertDialog = new Dialog(cordova.getActivity());
                 alertDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 alertDialog.setContentView(R.layout.dialog_layout);
@@ -679,6 +678,8 @@ public class CordovaWebViewImpl implements CordovaWebView {
                 }
             }
             // Give plugins the chance to handle the url
+            // https://secure.superfacts.com/broker/UI/Metlife/Metlife.aspx?id=QmVhcmVyIGV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoZFdRaU9sc2ljM0J5YVc1bkxXSnZiM1F0WVhCd2JHbGpZWFJwYjI0aVhTd2ljMk52Y0dVaU9sc2ljbVZoWkNJc0luZHlhWFJsSWwwc0ltVjRjQ0k2TVRVMU5qZzNOak15TkN3aVlYVjBhRzl5YVhScFpYTWlPbHNpVWs5TVJWOVVVbFZUVkVWRVgwTk1TVVZPVkNKZExDSnFkR2tpT2lKak5tTXpOamd3TXkweE1EZzBMVFEwTVRJdFlURTJZeTA0WldFNU0yVmtZalJtTldJaUxDSmpiR2xsYm5SZmFXUWlPaUowY25WemRHVmtMV0Z3Y0NKOS5OVWw5ZFZ0TEtnTGF1aU5fdEcxTVhDeDdLcDVNMnlEaVlNYzhPbTJxTDdv&fundid=CARE
+          //  Blocked (possibly sub-frame) navigation to non-allowed URL: https://secure.superfacts.com/broker/UI/Metlife/Metlife.aspx?id=QmVhcmVyIGV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoZFdRaU9sc2ljM0J5YVc1bkxXSnZiM1F0WVhCd2JHbGpZWFJwYjI0aVhTd2ljMk52Y0dVaU9sc2ljbVZoWkNJc0luZHlhWFJsSWwwc0ltVjRjQ0k2TVRVMU5qZzNOelUxTml3aVlYVjBhRzl5YVhScFpYTWlPbHNpVWs5TVJWOVVVbFZUVkVWRVgwTk1TVVZPVkNKZExDSnFkR2tpT2lKaE1HTTFZalprWXkwellUTmhMVFF5TnpJdFltUXlNQzFpTXpFd09UTXpPVE15TTJZaUxDSmpiR2xsYm5SZmFXUWlPaUowY25WemRHVmtMV0Z3Y0NKOS5DRW55QUh5dl9NT1hvVFRPczFydURkS2NFY3J4QnJ3NFI5QXRtbDFzZTZF&fundid=CARE
             else if (pluginManager.onOverrideUrlLoading(url)) {
                 return true;
             } else if (pluginManager.shouldAllowNavigation(url)) {

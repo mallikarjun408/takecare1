@@ -397,7 +397,7 @@ function getUserBalanceDetails() {
 					hideLoadingIndicator();
 					showAvailableBalance();
 					localStorage.setItem("balance_retry", false);
-					if (data && data.balance) {
+					if (data) {
 						document.getElementById("btn-balance-without-pin").style.display = "none";
 						var userBalance;
 						if(accounting){

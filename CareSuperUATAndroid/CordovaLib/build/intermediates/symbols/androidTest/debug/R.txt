@@ -1,0 +1,7 @@
+int font filson_pro_bold1 0x7f010000
+int font filson_pro_book 0x7f010001
+int id btnNegative 0x7f020000
+int id btnPositive 0x7f020001
+int id txtViewMessage 0x7f020002
+int id txtViewTitle 0x7f020003
+int layout dialog_layout 0x7f030000

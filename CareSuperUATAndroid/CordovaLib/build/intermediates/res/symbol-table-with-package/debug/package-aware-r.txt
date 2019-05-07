@@ -1,4 +1,6 @@
 org.apache.cordova
+int font filson_pro_bold1 0x7f0a0001
+int font filson_pro_book 0x7f0a0002
 int id btnNegative 0x7f0c0001
 int id btnPositive 0x7f0c0002
 int id txtViewMessage 0x7f0c0003

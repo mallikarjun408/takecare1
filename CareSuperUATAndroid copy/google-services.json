@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "539565870518",
+    "firebase_url": "https://caresuperapp.firebaseio.com",
+    "project_id": "caresuperapp",
+    "storage_bucket": "caresuperapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539565870518:android:98d3208adb61a259",
+        "android_client_info": {
+          "package_name": "com.lnt.caresuper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539565870518-tqp2nbd50b0cvr3b1a2e6mfb4id78u9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtwAju-Bo3Id6r_i146hB5aZNvQbdVlms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539565870518-tqp2nbd50b0cvr3b1a2e6mfb4id78u9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
