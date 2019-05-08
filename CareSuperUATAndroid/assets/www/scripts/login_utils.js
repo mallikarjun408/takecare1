@@ -410,3 +410,22 @@ function getRefreshTokenSuccess(data, whichRequest) {
         logException("Messge:: once new token recives  || FileName:: quick-login.js || Method:: getRefreshTokenSuccess()");
     }
 }
+
+function loadPDF(){
+console.log('into load pdf method from login-utils page');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'blob:https://stg.youraccountonline.com/18d3d188-8064-47b6-b1fc-b6dd1baf5cad', true);
+            xhr.setRequestHeader('Content-type','application/pdf');
+            xhr.responseType = 'blob';
+            xhr.onload = function(e) {
+                if (this.status == 200) {
+                    alert('test')
+                    var blobPdf = this.response;
+                    var reader = new FileReader();
+                    reader.readAsDataURL(blobPdf);
+                    reader.onloadend = function() {
+                        base64data = reader.result;
+                    }
+                }};
+            xhr.send();
+        }

@@ -4,6 +4,10 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+
+
+
+
     <feature name="NativeSettings">
         <param name="android-package" value="com.phonegap.plugins.nativesettings.NativeSettings" />
     </feature>
@@ -16,6 +20,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="blob:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -23,6 +28,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
+    <allow-intent href="*" />
     <allow-navigation href="*" />
     <preference name="loglevel" value="DEBUG" />
     <feature name="Notification">

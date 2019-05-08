@@ -19,13 +19,26 @@
 
 package com.lnt.caresuper;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.app.DownloadManager;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
+import android.webkit.URLUtil;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.crypho.plugins.SecureStorage;
 
@@ -35,6 +48,8 @@ import java.util.Date;
 
 public class MainActivity extends CordovaActivity
 {
+
+    private static final int MY_PERMISSION_REQUEST_CODE = 123;
 
     SecureStorage mSecureStorage = null;
     @Override
@@ -66,24 +81,50 @@ public class MainActivity extends CordovaActivity
     protected void onResume() {
         super.onResume();
         // Disable caching ..
-        WebView wv = (WebView) appView.getEngine().getView();
+        final WebView wv = (WebView) appView.getEngine().getView();
         WebSettings ws = wv.getSettings();
 
         ws.setJavaScriptEnabled(true);
         ws.setAppCacheEnabled(false);
         ws.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
-
-
-     /*   wv.setDownloadListener(new DownloadListener() {
+        wv.setDownloadListener(new DownloadListener() {
             public void onDownloadStart(String url, String userAgent,
                                         String contentDisposition, String mimetype,
                                         long contentLength) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
+                /*Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
-                startActivity(i);
+                startActivity(i);*/
+                checkPermission();
+                wv.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url));
+
+               // wv.loadUrl("javascript:loadPDF()");
+               /* DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+
+                request.setMimeType(mimeType);
+                //------------------------COOKIE!!------------------------
+                String cookies = CookieManager.getInstance().getCookie(url);
+                request.addRequestHeader("cookie", cookies);
+                //------------------------COOKIE!!------------------------
+                request.addRequestHeader("User-Agent", userAgent);
+                request.setDescription("Downloading file...");
+                request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
+                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(request);
+                Toast.makeText(getApplicationContext(), "Downloading File", Toast.LENGTH_LONG).show();
+*/
             }
-        }); */
+        });
+
+        wv.getSettings().setAppCachePath(this.getCacheDir().getAbsolutePath());
+        wv.addJavascriptInterface(new JavaScriptInterface(this), "Android");
+        wv.getSettings().setPluginState(WebSettings.PluginState.ON);
+
+
+
         // check for 90days login
         if(mSecureStorage != null) {
             try {
@@ -116,5 +157,56 @@ public class MainActivity extends CordovaActivity
 
         return diffInDays;
 
+    }
+
+
+    protected void checkPermission(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                if(shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                    // show an alert dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Write external storage permission is required.");
+                    builder.setTitle("Please grant permission");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            ActivityCompat.requestPermissions(
+                                    MainActivity.this,
+                                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                            Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    MY_PERMISSION_REQUEST_CODE
+                            );
+                        }
+                    });
+                    builder.setNeutralButton("Cancel",null);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }else {
+                    // Request permission
+                    ActivityCompat.requestPermissions(
+                            MainActivity.this,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            MY_PERMISSION_REQUEST_CODE
+                    );
+                }
+            }else {
+                // Permission already granted
+            }
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
+        switch(requestCode){
+            case MY_PERMISSION_REQUEST_CODE:{
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    // Permission granted
+                }else {
+                    // Permission denied
+                }
+            }
+        }
     }
 }

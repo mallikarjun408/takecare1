@@ -24,7 +24,7 @@ class URLConstants {
 
     public static String STAGING_CONTACTUS_URL = "form/aus/CARESUPER/config/contact-us.html";  // https://stg.youraccountonline.com/
     public static String PROD_CONTACTUS_URL = "https://login.identity.caresuper.com.au/form/aus/CARESUPER/config/contact-us.html";
-
+    // https://stg.youraccountonline.com/form/aus/CARESUPER/public-contact-us.html)
    // https://www.youraccountonline.com/secure?login_uri=https://login.identity.caresuper.com.au&passwordChange=true
 
     public static String[] LOGIN_LOGOUT_URLS = {

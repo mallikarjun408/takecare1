@@ -515,4 +515,11 @@ public class CordovaActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+
+        appView.getUrl();
+        super.onBackPressed();
+    }
 }
