@@ -21,9 +21,14 @@ function tokenExpiresError(errorResponse){
     } else if(errorResponse.status === 500){
        finalText = ERROR_MESSGE;
       // formADiv = " <br><br> <div> <b> Status Code : "+ errorResponse.status +"</b></div>";
-       if(config.plainContent == "displayAlerts=yes"){
-          finalText = finalText + formADiv;
+       try{
+            if(config.plainContent == "displayAlerts=yes"){
+                finalText = finalText + formADiv;
+            }
+       }catch(exception) {
+        console.log(exception)
        }
+
        return finalText;
     } else if(errorResponse.status === 400){
         formADiv = " <br> <div> <b> Status Code : "+ errorResponse.status +"</b></div>";

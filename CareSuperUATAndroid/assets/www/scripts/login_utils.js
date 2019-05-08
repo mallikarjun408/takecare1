@@ -161,8 +161,12 @@ function navigateToDashboard() {
                        getRefreshToken("navigate_dashboard");
                    } else {
                        var createAStatusCodeDiv = " <br> <div> <b> Status Code : "+ error.status +"</b></div>";
-                       if(config.plainContent == "displayAlerts=yes"){
-                            errorCode = errorCode + createAStatusCodeDiv;
+                       try {
+                           if(config.plainContent == "displayAlerts=yes"){
+                                errorCode = errorCode + createAStatusCodeDiv;
+                           }
+                       } catch(error) {
+                           console.log(error);
                        }
                        $("#message-to-display").html(errorCode);
                        $("#alert-dialog").foundation("open");
@@ -284,10 +288,12 @@ function getRefreshToken(whichRequest) {
                        logException("Messge:: getRefreshToken  failure callback from:: "+whichRequest+"  error response :: "+JSON.stringify(data)+" || FileName:: quick-login.js || Method:: getRefreshToken()");
                        var errorCode = tokenExpiresError(error);
                        var createAStatusCodeDiv ="";
-                       if(config.plainContent == "displayAlerts=yes"){
-                           createAStatusCodeDiv = " <br> <div> <b> Status Code : "+ error.status +"</b></div>";
+                       try{
+                           if(config.plainContent == "displayAlerts=yes"){
+                               createAStatusCodeDiv = " <br> <div> <b> Status Code : "+ error.status +"</b></div>";
+                           }
+                       }catch(err) {
                        }
-
                        if (errorCode != null && errorCode == "invalid_grant") {
                             if(config.plainContent == "displayAlerts=yes"){
                               $("#session-expired-message").html(SESSION_EXPIRE_MSG+"</br>"+createAStatusCodeDiv);
