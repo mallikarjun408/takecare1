@@ -38,14 +38,14 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function () {
         initCrashlytics();
-      //  getConfigValuesFromAEM();
+        getConfigValuesFromAEM();
    //
 
         // Check if secure storge is availble
         //@Sagar displaying the splash screen based on platform only
         //Since in iOS the splash screen are displayed in the launchscreen file
        // getConfigValues();
-        var devicePlatform = device.platform;
+     /*   var devicePlatform = device.platform;
         if (devicePlatform == "Android")
             navigator.splashscreen.show();
        // logException("Messge:: Failed to load page in InAppBrowser  || FileName:: Index.js || Method:: onBrowserErrorOccured()");
@@ -111,7 +111,7 @@ var app = {
             'quickLoginType'
         );
 
-
+*/
 
         this.receivedEvent('deviceready');
     },
@@ -139,9 +139,11 @@ function getConfigValuesFromAEM() {
     if (isNetworkAvailable()) {
         navigator.splashscreen.show();
         loadConfigValuesFromServer().then(function success(data) {
-            getConfigValues().then(configUrlSuccess(data, ss), fnFailure(ss));
+            getConfigValues().then(configUrlSuccess(data, ss), function(ss){});
+           // configUrlSuccess(data, ss);
         }, function error(error) {
-            getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
+            //getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
+            logException("Messge:: Failed to get AEM config URLs  "+JSON.stringify(error)+" || FileName:: Index.js || Method:: getConfigValuesFromAEM()");
         });
     } else {
         navigator.splashscreen.hide();
@@ -160,18 +162,6 @@ function getConfigValuesFromAEM() {
 function configUrlSuccess(urlConfigValues, ss) {
 	//setTimeout("navigator.splashscreen.hide()", 2000);
     navigator.splashscreen.hide();
-
-   /* var jsonStr = localStorage.getItem("configUrlValue");
-    	var jsonObject = null;
-    	if (jsonStr != undefined)
-    		jsonObject = JSON.parse(jsonStr);
-
-    if(localStorage.getItem('UseNewEndpointsAndroid') != jsonObject.UseNewEndpointsAndroid) {
-        clearRequiredData();
-        localStorage.setItem("configUrlValue",urlConfigValues);
-        navigateToWebAppLogin();
-    } else { */
-        //check if quickLoginType is set, If yes then show quickLogin screen else show login screen
         ss.get(
             function(value) {
                 //cordova.getAppVersion.getVersionCode(function(versioncode) {
@@ -214,7 +204,7 @@ function configUrlSuccess(urlConfigValues, ss) {
             },
             'quickLoginType'
         );
-	//}
+
 }
 
 function navigateToWebAppLogin() {
@@ -239,11 +229,11 @@ function navigateToWebAppLogin() {
 
       //  var requestURL = "https://uat.services.mercerfinancialservices.com/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
 
-     var requestURL =  authorizationUrl + "?client_id=caresuperapp&redirect_uri="+ app_redirect_url+
+     var requestURL =  (localStorage.getItem(AUTH_ENDPOINT) || authorizationUrl) + "?client_id="+(localStorage.getItem(CLIENT_ID) || App_Client_ID) +"&redirect_uri="+ (localStorage.getItem(CALLBACK_URL) || app_redirect_url )+
 
-                                "&pwd_reset_redirect_uri="+encodeURIComponent(pwd_reset_redirect_uri)+"?login_uri="+loginUrl+
+                                "&pwd_reset_redirect_uri="+encodeURIComponent((localStorage.getItem(PWD_RESET_REDIRECT_URI) || pwd_reset_redirect_uri))+   //"?login_uri="+(localStorage.getItem(LOGIN_URL) || loginUrl)+
 
-                                "&login_uri="+loginUrl+
+                                "&login_uri="+(localStorage.getItem(LOGIN_URL) || loginUrl)+
 
                                 "&code_challenge="+codeChallengeValue+"&code_challenge_method="+code_challenge_method+"&response_type=code";
 
@@ -348,7 +338,7 @@ function onBrowserLoadStart(event) {
        // var appCode = urlStringValue.substring(urlStringValue.lastIndexOf("code") + 5, urlStringValue.lastIndexOf("scope") - 1)
             var requestData = {
                 code: appCode,
-                client_id: "caresuperapp",
+                client_id: ""+(localStorage.getItem(CLIENT_ID) || App_Client_ID),
                 code_verifier: codeVerifier,
                 redirect_uri: app_redirect_url,
                 grant_type: "authorization_code"
@@ -357,7 +347,7 @@ function onBrowserLoadStart(event) {
             console.log(" requestData  ===   "+JSON.stringify(requestData));
             $.ajax({
                 type: "POST",
-                url: (localStorage.getItem(TOKEN_URL) || authTokenUrl),
+                url: (localStorage.getItem(TOKEN_ENDPOINT) || authTokenUrl),
                 timeout: 20000,
                 data: requestData,
                 headers: {

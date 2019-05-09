@@ -9,9 +9,11 @@ var app_redirect_url = "mercersuperapp://callback.html";
 var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 
 */
+
+var App_Client_ID = "caresuperapp";
 /*
  CareSuper Staging URLS
-
+*/
 
 
 var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2";
@@ -24,14 +26,14 @@ var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgis
 var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
 var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
 var baseUrl = "https://uat.services.mercerfinancialservices.com";
-var AEMConfigURL = "http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
-*/
+var AEMConfigURL = "https://stg.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER"; //"http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
+
 
 
 var ErrorCodeConfigUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text";
 /*
  CareSuper PROD URLS
-*/
+
 
 
 var authorizationUrl=  "https://login.identity.caresuper.com.au/as/authorization.oauth2";
@@ -44,9 +46,9 @@ var appContactusUrl =  "https://www.youraccountonline.com/bin/mercer-services/os
 var aboutTheAppUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody";
 var baseUrl         =  "https://services.mercerfinancialservices.com";
 
+var AEMConfigURL = "https://stg.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER"; //"http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
 
-
-
+*/
 
 
 // index.js
@@ -117,16 +119,21 @@ var isDebug = false;
 	"callbackurl": "caresuperapp://callback.html",
 	"EnableCrashlytics": "true",
 	"CrashlyticsNotificationEmailAdd": "test@mercer.com",
+	"login_uri": "https://pf-mst.001.staging.ping-nonprod.mercerenc.com",
+	"pwd_reset_redirect_uri": "https://stg.youraccountonline.com/secure?login_uri=https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com",
 	"responseCode": "200",
 	"responseMessage": "Success"
 }
 */
 
 
-var LOGIN_URL = "login_url";
-var TOKEN_URL = "token_url";
-var MERCER_API = "mercer_api";
-var CLIENT_ID = "client_id";
-var CALLBACK_URL = "callback_url";
-var ENABLE_CRASHLYTICS = "enable_crashlytics";
+var AUTH_ENDPOINT = "AuthEndpoint";
+var TOKEN_ENDPOINT = "TokenEndpoint";
+var MERCER_ENDPOINT = "MercerAPIEndpoint";
+var CLIENT_ID = "clientid";
+var CALLBACK_URL = "callbackurl";
+var ENABLE_CRASHLYTICS = "EnableCrashlytics";
+var LOGIN_URL = "login_uri";
+var PWD_RESET_REDIRECT_URI = "pwd_reset_redirect_uri";
+
 

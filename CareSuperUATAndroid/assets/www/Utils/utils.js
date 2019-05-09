@@ -158,19 +158,19 @@ function navigateToLoginPage() {
 var _crashlytics;
 
 function initCrashlytics() {
-    if(isDebug){
+    if(localStorage.getItem(ENABLE_CRASHLYTICS) == "true"){
         _crashlytics = FirebaseCrashlytics.initialise();
     }
 }
 
 function logException (exceptionMsg) {
-    if(isDebug) {
+    if(localStorage.getItem(ENABLE_CRASHLYTICS) == "true"){
         _crashlytics.logException(exceptionMsg);
     }
 }
 
 function doCrash () {
-    if(isDebug){
+    if(localStorage.getItem(ENABLE_CRASHLYTICS) == "true"){
         _crashlytics.crash();
     }
 }
@@ -189,15 +189,17 @@ function loadConfigValuesFromServer() {
                     'Accept': 'application/json'
                 },
                 success: function (data) {
-                    console.log("success response "+JSON.stringify(data));
+                    console.log("success response @AEM config"+JSON.stringify(data));
                     if (data != null) {
                         if (data.responseCode == 200) {
-                            localStorage.setItem(LOGIN_URL,data.AuthEndpoint);
-                            localStorage.setItem(TOKEN_URL,data.TokenEndpoint);
-                            localStorage.setItem(MERCER_API,data.MercerAPIEndpoint);
+                            localStorage.setItem(AUTH_ENDPOINT,data.AuthEndpoint);
+                            localStorage.setItem(TOKEN_ENDPOINT,data.TokenEndpoint);
+                            localStorage.setItem(MERCER_ENDPOINT,data.MercerAPIEndpoint);
                             localStorage.setItem(CLIENT_ID,data.clientid);
                             localStorage.setItem(CALLBACK_URL,data.callbackurl);
                             localStorage.setItem(ENABLE_CRASHLYTICS,data.EnableCrashlytics);
+                            localStorage.setItem(LOGIN_URL,data.login_uri);
+                            localStorage.setItem(PWD_RESET_REDIRECT_URI,data.pwd_reset_redirect_uri);
                         }
                         resolve(JSON.stringify(data));
                     }else {

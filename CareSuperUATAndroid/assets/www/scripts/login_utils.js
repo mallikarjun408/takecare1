@@ -52,7 +52,7 @@ function loginUtilDeviceReady() {
 
 }
 
-function doLogin() {
+/*function doLogin() {
 
     //Making ajax call to get encrypted data for login fields
     // var getEncryptedValuesurl = 'http://mercerqa.www.marshinc.net/bin/mercer/aus/getEncryptedLoginDetails?txtCompanyName='+window.empNo+'&txtUserName='+window.planNo+'&txtPassword='+window.password
@@ -108,6 +108,7 @@ function post(path, params, method) {
     form.submit();
 
 }
+*/
 
 function navigateToDashboard() {
 
@@ -128,7 +129,7 @@ function navigateToDashboard() {
             accessTokenValue = value;
             $.ajax({
                 type: "POST",
-                url: websiteUrl,
+                url: (localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/website",
                 async: false,
                 timeout: 120000,
                 headers: {
@@ -143,7 +144,7 @@ function navigateToDashboard() {
                     document.close();
                 },
                 error: function (error) {
-                    console.log('loginUtils : error Callback '+websiteUrl+" <br> "+JSON.stringify(error));
+                    console.log('loginUtils : error Callback '+(localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/website" +" <br> "+JSON.stringify(error));
                      $("#overlay-div").css("display", "none");
                    /* var returnValue = websiteErrorCallback(error);
                     if (returnValue != null && typeof returnValue === 'object') {
@@ -266,7 +267,7 @@ function getRefreshToken(whichRequest) {
                 console.log("refreshRequestData   "+JSON.stringify(refreshRequestData));
                 $.ajax({
                     type: "POST",
-                    url: authTokenUrl,
+                    url: (localStorage.getItem(TOKEN_ENDPOINT) || authTokenUrl),
                     async: false,
                     timeout: 20000,
                     data: refreshRequestData,

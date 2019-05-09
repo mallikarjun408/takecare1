@@ -116,7 +116,7 @@ function onBrowserLoadStart(event) {
 		};
 		$.ajax({
 			type: "POST",
-			url: "https://services.mercerfinancialservices.com/v1/auth/token",
+			url: (localStorage.get(TOKEN_ENDPOINT) || authTokenUrl),
 			async: false,
 			timeout: 20000,
 			data: requestData,
