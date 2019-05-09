@@ -101,62 +101,62 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-open-native-settings": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-add-swift-support": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-dialogs": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-fingerprint-aio": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-keyboard": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-secure-storage": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-touch-id": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-app-version": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-customurlscheme": {
-      "URL_SCHEME": "mercersuperapp",
+      "URL_SCHEME": "caresuperapp",
       "ANDROID_SCHEME": " ",
       "ANDROID_HOST": " ",
       "ANDROID_PATHPREFIX": "/",
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-3dtouch": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     },
     "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.lnt.caresuper"
+      "PACKAGE_NAME": "com.caresuper.mobile.app"
     }
   },
   "dependent_plugins": {},

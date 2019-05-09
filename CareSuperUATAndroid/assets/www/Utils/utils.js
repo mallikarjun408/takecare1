@@ -160,6 +160,8 @@ var _crashlytics;
 function initCrashlytics() {
     if(localStorage.getItem(ENABLE_CRASHLYTICS) == "true"){
         _crashlytics = FirebaseCrashlytics.initialise();
+        alert(_crashlytics);
+         _crashlytics.logException("Test");
     }
 }
 

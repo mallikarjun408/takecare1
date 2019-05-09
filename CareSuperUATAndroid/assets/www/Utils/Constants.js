@@ -1,14 +1,4 @@
-/*
- MST URLS
 
-
-
-var authorizationUrl =  "https://pf-mst.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2?";
-var authTokenUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com/as/token.oauth2";
-var app_redirect_url = "mercersuperapp://callback.html";
-var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
-
-*/
 
 var App_Client_ID = "caresuperapp";
 /*
@@ -57,26 +47,15 @@ var code_challenge_method = "S256";
 var pwd_reset_redirect_uri = "https://stg.youraccountonline.com/secure";
 // access Token URL
 
-var AEMPageRequsetUrl = "https://www.youraccountonline.com/secure";
-var loginBridgeUrl = "https://secure.superfacts.com/web/mst/loginbridge.tpz";
+
 
 // Login_Utils
-
+/*
 var websiteUrl =  baseUrl+"/v1/website";
 var customerUrl = baseUrl+"/v1/customer";
 var customerBalanceUrl = baseUrl+"/v1/customer/balance";
+*/
 
-// App Setting Urls
-
-// var appSecurityUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody ";
-// <prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody
-// var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
-// var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
-// <prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody
-
-
-// var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
-//<prod> https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody
 // config URL
 
 var configUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/MST/phonegap-config/jcr:content/par/destinationcontent&nodeProperty=text";

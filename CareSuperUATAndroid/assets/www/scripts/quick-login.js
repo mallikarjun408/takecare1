@@ -264,7 +264,7 @@ function getLoggedInUserDetails() {
 			console.log("getLoggedInUserDetails Access Token ", accessTokenValue);
 			$.ajax({
 				type: "GET",
-				url:  (localStorage.getItem(MERCER_ENDPOINT)) + "/v1/customer",
+				url:  (localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/customer",
 				async: false,
 				timeout: 20000,
 				headers: {
@@ -385,7 +385,7 @@ function getUserBalanceDetails() {
 			console.log("getUserBalanceDetails Access Token ", accessTokenValue);
 			$.ajax({
 				type: "GET",
-				url: (localStorage.getItem(MERCER_ENDPOINT)) + "/v1/customer/balance",
+				url: (localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/customer/balance",
 				async: false,
 				timeout: 20000,
 				headers: {
