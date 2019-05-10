@@ -200,7 +200,7 @@ function configUrlSuccess(urlConfigValues, ss) {
                 //hiding the splash screen after 3 secs
                 //if (devicePlatform == "Android")
                     //setTimeout("navigator.splashscreen.hide()", 2000);
-                    navigator.splashscreen.hide();
+                  //  navigator.splashscreen.hide();
                 //Instead of navigating to the login page the user is navigated directly to the
                 //web app login page
                 navigateToWebAppLogin();
