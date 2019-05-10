@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    >
+
+    <TextView
+        android:id="@+id/txtViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CareSuper"
+        android:fontFamily="@font/filson_pro_bold1"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/txtViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You are now leaving secure area and would be logged out if you proceed\n\nDo you want to proceed?"
+        android:gravity="center_horizontal"
+        android:textColor="#232d36"
+        android:fontFamily="@font/filson_pro_book"
+        android:textSize="16sp"
+        android:layout_margin="20dp"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="#000"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#000"
+        >
+        <Button
+            android:id="@+id/btnNegative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:fontFamily="@font/filson_pro_book"
+            android:layout_weight="0.5"
+            android:textColor="#303030"
+            android:background="#fff"
+            android:layout_marginRight="0.25dp"
+            android:layout_marginBottom="0.5dp"
+            />
+        <Button
+            android:id="@+id/btnPositive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:fontFamily="@font/filson_pro_book"
+            android:layout_weight="0.5"
+            android:textColor="#2158F5"
+            android:background="#fff"
+            android:layout_marginLeft="0.25dp"
+            android:layout_marginBottom="0.5dp"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
