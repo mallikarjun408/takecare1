@@ -31,13 +31,14 @@ var authorizationUrl=  "https://login.identity.caresuper.com.au/as/authorization
 var authTokenUrl    = "https://login.identity.caresuper.com.au/as/token.oauth2";
 var app_redirect_url= "caresuperapp://callback.html";
 var loginUrl        =  "https://login.identity.caresuper.com.au";
+var baseUrl         =  "https://services.mercerfinancialservices.com";
+
+*/
 var appSecurityUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/securityrte&nodeProperty=rtebody";
 var appSupportUrl   =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/supportrte&nodeProperty=rtebody";
 var appContactusUrl =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
 var aboutTheAppUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody";
-var baseUrl         =  "https://services.mercerfinancialservices.com";
 
-*/
 var AEMConfigURL = "https://www.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
 
 // index.js
