@@ -20,7 +20,7 @@ class URLConstants {
 
     public static String STAGING_LOGOUT_URL = "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/idp/startSLO.ping?TargetResource=https%3A%2F%2Fwww.caresuper.com.au%2F/";
     public static String PROD_LOGOUT_URL = "https://login.identity.caresuper.com.au/idp/startSLO.ping?TargetResource=https://www.caresuper.com.au/";
-    public static String PROD_LOGOUT_URL1 = "https://login.identity.caresuper.com.au/idp/startSLO.ping?TargetResource=https%3A%2F%2Fwww.caresuper.com.au%2F/";
+    public static String PROD_LOGOUT_URL1 = "https://login.identity.caresuper.com.au/idp/sartSLO.ping?TargetResource=https%3A%2F%2Fwww.caresuper.com.au%2F/";
 
     public static String STAGING_CONTACTUS_URL = "form/aus/CARESUPER/config/contact-us.html";  // https://stg.youraccountonline.com/
     public static String PROD_CONTACTUS_URL = "https://login.identity.caresuper.com.au/form/aus/CARESUPER/config/contact-us.html";
