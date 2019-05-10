@@ -44,6 +44,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static org.apache.cordova.URLConstants.PROD_CONTACTUS_URL;
+import static org.apache.cordova.URLConstants.SESSION_EXPIRE_DASHBOARDPROD;
 import static org.apache.cordova.URLConstants.STAGING_CONTACTUS_URL;
 
 /**
