@@ -37,8 +37,10 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function () {
+        navigator.splashscreen.show();
         initCrashlytics();
         getConfigValuesFromAEM();
+
    //
 
         // Check if secure storge is availble
@@ -126,6 +128,7 @@ app.initialize();
 
 
 function getConfigValuesFromAEM() {
+
     var ss = new cordova.plugins.SecureStorage(
         function() {
             localStorage.setItem('isDeviceSecure', 'true');
@@ -137,11 +140,11 @@ function getConfigValuesFromAEM() {
         'my_app'
     );
     if (isNetworkAvailable()) {
-        navigator.splashscreen.show();
         loadConfigValuesFromServer().then(function success(data) {
-            getConfigValues().then(configUrlSuccess(data, ss), function(ss){});
-           // configUrlSuccess(data, ss);
+           // getConfigValues().then(configUrlSuccess(data, ss), function(ss){ navigator.splashscreen.hide();});
+           configUrlSuccess(data, ss);
         }, function error(error) {
+            navigator.splashscreen.hide();
             //getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
             logException("Messge:: Failed to get AEM config URLs  "+JSON.stringify(error)+" || FileName:: Index.js || Method:: getConfigValuesFromAEM()");
         });
@@ -226,14 +229,13 @@ function navigateToWebAppLogin() {
             //used for the indentification of which code verifier value to send
             localStorage.setItem("isNewLogin", true);
 
-
       //  var requestURL = "https://uat.services.mercerfinancialservices.com/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
 
-     var requestURL =  (localStorage.getItem(AUTH_ENDPOINT) || authorizationUrl) + "?client_id="+(localStorage.getItem(CLIENT_ID) || App_Client_ID) +"&redirect_uri="+ (localStorage.getItem(CALLBACK_URL) || app_redirect_url )+
+     var requestURL =  (localStorage.getItem(AUTH_ENDPOINT)) + "?client_id="+(localStorage.getItem(CLIENT_ID)) +"&redirect_uri="+ (localStorage.getItem(CALLBACK_URL))+
 
-                                "&pwd_reset_redirect_uri="+encodeURIComponent((localStorage.getItem(PWD_RESET_REDIRECT_URI) || pwd_reset_redirect_uri))+   //"?login_uri="+(localStorage.getItem(LOGIN_URL) || loginUrl)+
+                                "&pwd_reset_redirect_uri="+encodeURIComponent((localStorage.getItem(PWD_RESET_REDIRECT_URI)))+   //"?login_uri="+(localStorage.getItem(LOGIN_URL) || loginUrl)+
 
-                                "&login_uri="+(localStorage.getItem(LOGIN_URL) || loginUrl)+
+                                "&login_uri="+(localStorage.getItem(LOGIN_URL))+
 
                                 "&code_challenge="+codeChallengeValue+"&code_challenge_method="+code_challenge_method+"&response_type=code";
 
@@ -338,16 +340,16 @@ function onBrowserLoadStart(event) {
        // var appCode = urlStringValue.substring(urlStringValue.lastIndexOf("code") + 5, urlStringValue.lastIndexOf("scope") - 1)
             var requestData = {
                 code: appCode,
-                client_id: ""+(localStorage.getItem(CLIENT_ID) || App_Client_ID),
+                client_id: ""+(localStorage.getItem(CLIENT_ID)),
                 code_verifier: codeVerifier,
-                redirect_uri: app_redirect_url,
+                redirect_uri: ""+(localStorage.getItem(CALLBACK_URL)),
                 grant_type: "authorization_code"
             };
 
             console.log(" requestData  ===   "+JSON.stringify(requestData));
             $.ajax({
                 type: "POST",
-                url: (localStorage.getItem(TOKEN_ENDPOINT) || authTokenUrl),
+                url: (localStorage.getItem(TOKEN_ENDPOINT)),
                 timeout: 20000,
                 data: requestData,
                 headers: {

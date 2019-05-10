@@ -116,7 +116,7 @@ function onBrowserLoadStart(event) {
 		};
 		$.ajax({
 			type: "POST",
-			url: (localStorage.get(TOKEN_ENDPOINT) || authTokenUrl),
+			url: (localStorage.get(TOKEN_ENDPOINT)),
 			async: false,
 			timeout: 20000,
 			data: requestData,

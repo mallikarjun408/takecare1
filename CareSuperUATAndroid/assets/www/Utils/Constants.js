@@ -3,7 +3,7 @@
 var App_Client_ID = "caresuperapp";
 /*
  CareSuper Staging URLS
-*/
+
 
 
 var authorizationUrl =  "https://pf-caresuper.001.staging.ping-nonprod.mercerenc.com/as/authorization.oauth2";
@@ -16,7 +16,8 @@ var appSupportUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgis
 var appContactusUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/contactusrte&nodeProperty=rtebody";
 var aboutTheAppUrl = "https://stg.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody"
 var baseUrl = "https://uat.services.mercerfinancialservices.com";
-var AEMConfigURL = "https://stg.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER"; //"http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
+*/
+//var AEMConfigURL = "https://stg.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER"; //"http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
 
 
 
@@ -36,10 +37,8 @@ var appContactusUrl =  "https://www.youraccountonline.com/bin/mercer-services/os
 var aboutTheAppUrl  =  "https://www.youraccountonline.com/bin/mercer-services/osgiservice/getNodeContentByProperty?nodePath=/content/mercer-online-forms/form/aus/CARESUPER/phonegap-config/jcr:content/par/aboutapprte&nodeProperty=rtebody";
 var baseUrl         =  "https://services.mercerfinancialservices.com";
 
-var AEMConfigURL = "https://stg.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER"; //"http://mercerauqa64.www.marshinc.net/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
-
 */
-
+var AEMConfigURL = "https://www.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=CARESUPER";
 
 // index.js
 var code_challenge_method = "S256";

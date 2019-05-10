@@ -1,4 +1,4 @@
-var config = JSON.parse(localStorage.getItem('configValue'));
+var config = {"plainContent":"displayAlerts=no"};//JSON.parse(localStorage.getItem('configValue'));
 //{"plainContent":"displayAlerts=no"};
 var formADiv = "default";
 function tokenExpiresError(errorResponse){
@@ -149,7 +149,11 @@ function navigateToLoginPage() {
 		'isBalanceWithoutEnabled', 'false'
 	);
 	localStorage.clear();
-	window.location = '../index.html';
+
+	var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close,clearsessioncache=yes";
+    var inAppBrowserObject = cordova.InAppBrowser.open("", '_blank', option);
+    //setTimeout(function(){window.location = "../index.html"},10);
+    window.location = "../index.html"
 }
 
 
@@ -160,8 +164,6 @@ var _crashlytics;
 function initCrashlytics() {
     if(localStorage.getItem(ENABLE_CRASHLYTICS) == "true"){
         _crashlytics = FirebaseCrashlytics.initialise();
-        alert(_crashlytics);
-         _crashlytics.logException("Test");
     }
 }
 

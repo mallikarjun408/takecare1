@@ -129,7 +129,7 @@ function navigateToDashboard() {
             accessTokenValue = value;
             $.ajax({
                 type: "POST",
-                url: (localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/website",
+                url: (localStorage.getItem(MERCER_ENDPOINT)) + "/v1/website",
                 async: false,
                 timeout: 120000,
                 headers: {
@@ -144,7 +144,7 @@ function navigateToDashboard() {
                     document.close();
                 },
                 error: function (error) {
-                    console.log('loginUtils : error Callback '+(localStorage.getItem(MERCER_ENDPOINT) || baseUrl) + "/v1/website" +" <br> "+JSON.stringify(error));
+                    console.log('loginUtils : error Callback '+(localStorage.getItem(MERCER_ENDPOINT)) + "/v1/website" +" <br> "+JSON.stringify(error));
                      $("#overlay-div").css("display", "none");
                    /* var returnValue = websiteErrorCallback(error);
                     if (returnValue != null && typeof returnValue === 'object') {
@@ -267,7 +267,7 @@ function getRefreshToken(whichRequest) {
                 console.log("refreshRequestData   "+JSON.stringify(refreshRequestData));
                 $.ajax({
                     type: "POST",
-                    url: (localStorage.getItem(TOKEN_ENDPOINT) || authTokenUrl),
+                    url: (localStorage.getItem(TOKEN_ENDPOINT)),
                     async: false,
                     timeout: 20000,
                     data: refreshRequestData,
@@ -286,7 +286,7 @@ function getRefreshToken(whichRequest) {
                         $("#user-data-loading-img-container").css("display", "none");
                         $("#logged-in-user-details").css("margin-top", "30px");
                         console.log('loginUtils : error Callback  token'+JSON.stringify(error));
-                       logException("Messge:: getRefreshToken  failure callback from:: "+whichRequest+"  error response :: "+JSON.stringify(data)+" || FileName:: quick-login.js || Method:: getRefreshToken()");
+                       logException("Messge:: getRefreshToken  failure callback from:: "+whichRequest+"  error response :: "+JSON.stringify(error)+" || FileName:: quick-login.js || Method:: getRefreshToken()");
                        var errorCode = tokenExpiresError(error);
                        var createAStatusCodeDiv ="";
                        try{

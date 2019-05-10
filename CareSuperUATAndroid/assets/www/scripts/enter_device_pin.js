@@ -261,7 +261,7 @@ function openFingerprint() {
 
 function navigateToLoginPage() {
 	clearRequiredData();
-	window.location = '../index.html';
+	window.location = "../index.html";
 
 }
 function okclicked() {
