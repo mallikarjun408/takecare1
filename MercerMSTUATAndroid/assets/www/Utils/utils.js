@@ -1,4 +1,4 @@
-var config = JSON.parse(localStorage.getItem('configValue'));
+var config = {"plainContent":"displayAlerts=no"}; //JSON.parse(localStorage.getItem('configValue'));
 //{"plainContent":"displayAlerts=no"};
 var formADiv = "default";
 function tokenExpiresError(errorResponse){
@@ -116,7 +116,6 @@ function getConfigValues(){
 
 
 function loadConfigValuesFromServer() {
-
     return new Promise(function(resolve,reject) {
         $.ajax({
                 type: "GET",
@@ -135,15 +134,12 @@ function loadConfigValuesFromServer() {
                 error: function (error) {
                     console.log("error response "+JSON.stringify(error));
                    /* var mm = {
-
-                      UseNewEndpointsIOS:false,
-
-                      UseNewEndpointsAndroid:true,
-
-                      CurrentEndpoints:"https://uat.services.mercerfinancialservices.com",
-
-                      NewEndpoints:"https://pf-mst.001.staging.ping-nonprod.mercerenc.com"
-
+                      	"UseNewEndpointsIOS": "false",
+                      	"UseNewEndpointsAndroid": "false",
+                      	"CurrentEndpoints": "https://services.mercerfinancialservices.com",
+                      	"NewEndpoints": "https://mst.login.identity.mercerfinancialservices.com",
+                      	"responseCode": "200",
+                      	"responseMessage": "Success"
                     }*/
                    // localStorage.setItem("configUrlValue",JSON.stringify(mm));
                     reject(error);

@@ -34,30 +34,11 @@ var app = {
 		document.addEventListener("backbutton", backButtonHandler, false);
 	},
 
-
-
 	// deviceready Event Handler
 	//
 	// Bind any cordova events here. Common events are:
 	// 'pause', 'resume', etc.
 	onDeviceReady: function() {
-		// @Sagar displaying the splash screen based on platform only
-		//Since in iOS the splash screen are displayed in the launchscreen file
-		//var devicePlatform = device.platform;
-		//if (devicePlatform == "Android")
-
-		// Check if secure storge is availble
-
-
-		/*getConfigValues().then(function(data){
-            Config = data;
-            localStorage.setItem("configValue",JSON.stringify(Config));
-		},function(error){
-		    console.log("error response "+JSON.stringify(error));
-            var mm = {"encodedContent":"ZGlzcGxheUFsZXJ0cz15ZXM=","plainContent":"displayAlerts=no"};
-            localStorage.setItem("configValue",JSON.stringify(mm));
-		}) */
-
         getConfigValuesFromAEM();
 		this.receivedEvent('deviceready');
 	},
@@ -84,9 +65,12 @@ function getConfigValuesFromAEM() {
     if (isNetworkAvailable()) {
         navigator.splashscreen.show();
         loadConfigValuesFromServer().then(function success(data) {
-            getConfigValues().then(configUrlSuccess(data, ss), fnFailure(ss));
+           // getConfigValues().then(configUrlSuccess(data, ss), fnFailure(ss));
+           configUrlSuccess(data, ss);
         }, function error(error) {
-            getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
+           $("#message-to-display").html("Failed to initialize components, please force quit application and retry");
+           $("#alert-dialog").foundation("open");
+           // getConfigValues().then(configUrlSuccess(null, ss), fnFailure(ss))
         });
     } else {
         navigator.splashscreen.hide();
@@ -102,81 +86,59 @@ function getConfigValuesFromAEM() {
 }
 
 function configUrlSuccess(urlConfigValues, ss) {
-	//setTimeout("navigator.splashscreen.hide()", 2000);
     navigator.splashscreen.hide();
-
-   /* var jsonStr = localStorage.getItem("configUrlValue");
-    	var jsonObject = null;
-    	if (jsonStr != undefined)
-    		jsonObject = JSON.parse(jsonStr);
-
-    if(localStorage.getItem('UseNewEndpointsAndroid') != jsonObject.UseNewEndpointsAndroid) {
-        clearRequiredData();
-        localStorage.setItem("configUrlValue",urlConfigValues);
-        navigateToWebAppLogin();
-    } else { */
         //check if quickLoginType is set, If yes then show quickLogin screen else show login screen
-        ss.get(
-            function(value) {
-                cordova.getAppVersion.getVersionCode(function(versioncode) {
-                    var appVersionCode = parseInt(versioncode);
-                    var isServiceFirstRun = localStorage.getItem("isServiceFirstRun");
-                    //beyond the app version code 10012 service integration was performed
-                    //hence below that we are navigating the user to the web app login page
-                    if (appVersionCode == 10013 && isServiceFirstRun && (isServiceFirstRun == "false")) {
-                        clearRequiredData();
-                        navigateToWebAppLogin();
-                    } else if (appVersionCode == 10013 && !isServiceFirstRun) {
-                        clearRequiredData();
-                        navigateToWebAppLogin();
-                    } else {
-                        var lastLoginVal = localStorage.getItem("lastLoginDate");
-                        if (lastLoginVal) {
+    ss.get(
+        function(value) {
+            cordova.getAppVersion.getVersionCode(function(versioncode) {
+                var appVersionCode = parseInt(versioncode);
+                var isServiceFirstRun = localStorage.getItem("isServiceFirstRun");
+                //beyond the app version code 10012 service integration was performed
+                //hence below that we are navigating the user to the web app login page
+                if (appVersionCode == 10013 && isServiceFirstRun && (isServiceFirstRun == "false")) {
+                    clearRequiredData();
+                    navigateToWebAppLogin();
+                } else if (appVersionCode == 10013 && !isServiceFirstRun) {
+                    clearRequiredData();
+                    navigateToWebAppLogin();
+                } else {
+                    var lastLoginVal = localStorage.getItem("lastLoginDate");
+                    if (lastLoginVal) {
 
-                            var lastLoginDate = new Date(lastLoginVal);
-                            var dateDifference = getDateDifference(lastLoginDate, new Date());
-                            if (dateDifference >= 90) {
-                                clearRequiredData();
-                                navigateToWebAppLogin();
-                            } else {
-                                window.location = "html/quick-login.html";
-                            }
-
-                        } else {
+                        var lastLoginDate = new Date(lastLoginVal);
+                        var dateDifference = getDateDifference(lastLoginDate, new Date());
+                        if (dateDifference >= 90) {
                             clearRequiredData();
                             navigateToWebAppLogin();
+                        } else {
+                            window.location = "html/quick-login.html";
                         }
 
+                    } else {
+                        clearRequiredData();
+                        navigateToWebAppLogin();
                     }
-                });
 
-            },
-            function(error) {
-                console.log('Error : ' + error);
-                //hiding the splash screen after 3 secs
-                //if (devicePlatform == "Android")
-                    //setTimeout("navigator.splashscreen.hide()", 2000);
-                    navigator.splashscreen.hide();
-                //Instead of navigating to the login page the user is navigated directly to the
-                //web app login page
-                navigateToWebAppLogin();
-            },
-            'quickLoginType'
-        );
+                }
+            });
+
+        },
+        function(error) {
+            console.log('Error : ' + error);
+            //hiding the splash screen after 3 secs
+            //if (devicePlatform == "Android")
+                //setTimeout("navigator.splashscreen.hide()", 2000);
+                navigator.splashscreen.hide();
+            //Instead of navigating to the login page the user is navigated directly to the
+            //web app login page
+            navigateToWebAppLogin();
+        },
+        'quickLoginType'
+    );
 	//}
 }
 
 function navigateToWebAppLogin() {
-/*
-	var mm = {
-		"encodedContent": "ZGlzcGxheUFsZXJ0cz15ZXM=",
-		"plainContent": "displayAlerts=no"
-	};
-	localStorage.setItem("configValue", JSON.stringify(mm));
-
-*/
-
-
 	var jsonStr = localStorage.getItem("configUrlValue");
 	console.log(' configUrlValue '+jsonStr);
 	var jsonObject = null;
@@ -197,17 +159,17 @@ function navigateToWebAppLogin() {
 			var requestURL = null;
 
 			if (jsonObject != null) {
-                // localStorage.setItem('UseNewEndpointsAndroid',jsonObject.UseNewEndpointsAndroid);
+                localStorage.setItem('mercerAPI',jsonObject.CurrentEndpoints);
 				if (jsonObject.UseNewEndpointsIOS) {}
 				//alert(typeof(jsonObject.UseNewEndpointsAndroid) + "   "+(jsonObject.UseNewEndpointsAndroid == true) )
-				if (jsonObject.UseNewEndpointsAndroid == true) {
+				if (jsonObject.UseNewEndpointsAndroid == "true") {
 				    //code challenge and code verifier values are generated in pairs
                     codeVerifier = generateRandomValue();
                     codeChallengeValue = getCodeChallenge(codeVerifier);
                     var mUrl = null;
-                    if(jsonObject["NewEndpoints "] != undefined) {
+                   /* if(jsonObject["NewEndpoints "] != undefined) {
                         mUrl = jsonObject["NewEndpoints "];
-                    } else if(jsonObject["NewEndpoints"] != undefined){
+                    } else*/ if(jsonObject["NewEndpoints"] != undefined){
                         mUrl = jsonObject["NewEndpoints"];
                     }
 
@@ -228,17 +190,20 @@ function navigateToWebAppLogin() {
 				    codeChallengeValue = getOldCodeChallenge(codeVerifierValue);
 					localStorage.setItem("endpoints", "current");
 					localStorage.setItem("authTokenUrl", jsonObject.CurrentEndpoints + "/v1/auth/token");
+
 					if (jsonObject.CurrentEndpoints) {
 						requestURL = jsonObject.CurrentEndpoints + "/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
 					}
 
 				}
 			} else {
-			    codeVerifierValue = getBase64CodeVerifier(); //localStorage.getItem("codeVerifier");
+			 /*   codeVerifierValue = getBase64CodeVerifier(); //localStorage.getItem("codeVerifier");
                 codeChallengeValue = getOldCodeChallenge (codeVerifierValue);
 				localStorage.setItem("endpoints", "current");
 				requestURL = oldEndPoint + "/v1/auth/authorize?client_id=" + client_secret_id + "&code_challenge=" + codeChallengeValue + "&code_challenge_method=" + code_challenge_method + "&redirect_uri=" + app_redirect_url;
-				localStorage.setItem("authTokenUrl", oldEndPoint + "/v1/auth/token");
+				localStorage.setItem("authTokenUrl", oldEndPoint + "/v1/auth/token"); */
+				$("#message-to-display").html("Failed to initialize components, please force quit application and retry");
+                $("#alert-dialog").foundation("open");
 			}
 
 console.log("requestURL   "+requestURL);
@@ -413,20 +378,10 @@ function onBrowserLoadStart(event) {
 			navigateToWebAppLogin();
 		} else {
 		console.log("urlStringValue startting activity indicator "+urlStringValue );
-		if(!isLoadingActive){
-		    isLoadingActive = true;
-		    navigator.notification.activityStart("Please wait", "Loading....");
-		}
-
-			/*setTimeout(function(){
-                try{
-
-                 navigator.notification.activityStop();
-                 alert('timeout');
-                }catch(err){
-                 console.log("error at setTimeout   "+  err);
-                }
-			},20*1000); */
+            if(!isLoadingActive){
+                isLoadingActive = true;
+                navigator.notification.activityStart("Please wait", "Loading....");
+            }
 		}
 	}
 

@@ -252,7 +252,7 @@ function getLoggedInUserDetails() {
 			console.log("getLoggedInUserDetails Access Token ", accessTokenValue);
 			$.ajax({
 				type: "GET",
-				url:  customerUrl,
+				url:  localStorage.getItem('mercerAPI')+"/v1/customer",
 				async: false,
 				timeout: 20000,
 				headers: {
@@ -363,7 +363,6 @@ function getUserBalanceDetails() {
 		},
 		'my_app'
 	);
-
 	ss.get(
 		//successfully got required value from secure storage
 		function (value) {
@@ -371,7 +370,7 @@ function getUserBalanceDetails() {
 			console.log("getUserBalanceDetails Access Token ", accessTokenValue);
 			$.ajax({
 				type: "GET",
-				url: customerBalanceUrl,
+				url: localStorage.getItem('mercerAPI')+"/v1/customer/balance",
 				async: false,
 				timeout: 20000,
 				headers: {

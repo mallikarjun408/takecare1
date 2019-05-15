@@ -127,7 +127,7 @@ function navigateToDashboard() {
             accessTokenValue = value;
             $.ajax({
                 type: "POST",
-                url: websiteUrl,
+                url: localStorage.getItem('mercerAPI')+"/v1/website",
                 async: false,
                 timeout: 120000,
                 headers: {
@@ -142,7 +142,7 @@ function navigateToDashboard() {
                     document.close();
                 },
                 error: function (error) {
-                    console.log('loginUtils : error Callback '+websiteUrl+" <br> "+JSON.stringify(error));
+                    console.log('loginUtils : error Callback '+localStorage.getItem('mercerAPI')+"/v1/website"+" <br> "+JSON.stringify(error));
                      $("#overlay-div").css("display", "none");
                    /* var returnValue = websiteErrorCallback(error);
                     if (returnValue != null && typeof returnValue === 'object') {
