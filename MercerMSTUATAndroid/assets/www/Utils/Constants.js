@@ -9,7 +9,7 @@ var app_redirect_url = "mercersuperapp://callback.html";
     *
     *  UAT URls
     *
-
+*/
 
 var oldEndPoint = "https://uat.services.mercerfinancialservices.com"; // - UAT
 var client_secret_id = "s70Pbmr8JNToDgSOfK5TQSDKxVJMEehz"; // - UAT
@@ -17,25 +17,25 @@ var AEMConfigURls = "https://stg.youraccountonline.com/bin/mercer-services/merce
 // var authorizationUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 var loginUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 var pwd_reset_redirect_uri = "https://stg.youraccountonline.com/secure";
-*/
+
 
 /*
     *
     *  PROD URls
     *
-*/
+
 var oldEndPoint = "https://services.mercerfinancialservices.com";  // -Prod
 var client_secret_id = "7De10Sd1l0MytEnk8AVzu676gGMKgnSI"; // - Prod
 var AEMConfigURls = "https://www.youraccountonline.com/bin/mercer-services/mercerauservices/getAppAuthConfigurations?clientName=mst";
 //var authorizationUrl = "https://pf-mst.001.staging.ping-nonprod.mercerenc.com";
 var loginUrl = "https://mst.login.identity.mercerfinancialservices.com";
 var pwd_reset_redirect_uri = "https://www.youraccountonline.com/secure";
-
+*/
 
 // new
 
 // access Token URL
-var authTokenUrl = authorizationUrl+"/as/token.oauth2";
+//var authTokenUrl = authorizationUrl+"/as/token.oauth2";
 
 // var AEMPageRequsetUrl = "https://www.youraccountonline.com/secure";
 // var loginBridgeUrl = "https://secure.superfacts.com/web/mst/loginbridge.tpz";

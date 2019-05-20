@@ -501,7 +501,7 @@ function exitApplication() {
 }
 
 function moveToLoginPage() {
-	// window.location = "../www/index.html";
+	window.location = "../www/index.html";
 	$("#overlay-div").css("display", "none");
 }
 

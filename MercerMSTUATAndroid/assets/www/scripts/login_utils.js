@@ -153,6 +153,7 @@ function navigateToDashboard() {
                         $("#user-balance-para").html(ERROR_MESSGE);
                     } */
                    var errorCode = tokenExpiresError(error);
+                  // alert(errorCode)
                    if (errorCode != null && errorCode == "invalid_grant") {
                         getRefreshToken("navigate_dashboard");
                    } else if (errorCode != null && errorCode == "keymanagement.service.invalid_access_token") {

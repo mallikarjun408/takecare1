@@ -1,0 +1,491 @@
+
+
+@font-face {
+  font-family: "filson_pro_bold";
+  src: url("../assets/fonts/filson_pro_bold.ttf");
+  src: url("../assets/fonts/filson_pro_bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "filson_pro_book";
+  src: url("../assets/fonts/filson_pro_book.ttf");
+  src: url("../assets/fonts/filson_pro_book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* commonly used */
+.textbold {
+    font-size: 22px;
+    font-family: "filson_pro_bold" !important;
+}
+.textNormal {
+    font-size: 18px;
+    font-family: "filson_pro_book" !important;
+}
+.popupTextBold {
+    font-family: "filson_pro_bold" !important;
+}
+.popupTextNormal {
+    font-family: "filson_pro_book" !important;
+}
+.textColor{
+    color: #2158F5 ;
+}
+
+.nextButtonStyle {
+   font-weight: bold;
+   width: 100%;
+   float: left;
+   margin-bottom: 0;
+   margin-top: 10%;
+   background-color: #2158F5 !important;
+}
+
+.nextButtonStyle:active {
+   font-weight: bold;
+   width: 100%;
+   float: left;
+   margin-bottom: 0;
+   margin-top: 10%;
+   background-color: #060866 !important;
+
+}
+.screenblockStyle {
+    overflow: hidden !important;
+}
+
+.containerBody {
+    background:#C8FFE4;
+}
+.headerLogo{
+    content: url(../assets/images/header_bottomline.png);
+}
+.indexLogo {
+    content: url(../assets/images/caresuper_logo.png);
+}
+.display_none{
+    display:none;
+}
+.colored-header-text {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "filson_pro_book" !important;font-weight: bold;
+}
+/* Login Successful Screen */
+.loginSuccessHeader {
+     padding-top:4% !important;
+     background-color: #ffffff;
+     line-height: 0rem !important;
+}
+
+.loginSuccessContainerStyle {
+   margin-bottom: 0.5rem;
+   padding-top: 13%;
+}
+
+.loginSuccessText {
+    text-align: center;
+    color: #000000;
+    letter-spacing: 0;
+    text-transform: none;
+    padding: 0 0 0 8px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.3rem;
+    font-weight: bold;
+}
+
+.loginSuccessText_subtext {
+    color: #000000;
+    padding-left:8%;
+    padding-top: 12%;
+
+}
+
+/* Enter Pin Screen */
+.titlebarStyle {
+    background: #C8FFE4;
+}
+
+.enterPin {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #000000 !important;
+}
+
+.backIconStyle {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0px 5px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    right: -3%;
+}
+
+.backIconViewStyle {
+    font-size: 1em;
+    color: #2158F5;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.index-caresuper-logo{
+    height: 3.4375rem;
+    line-height: 3.4375rem;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+	top: 0;
+    padding: 0 0 0 18px;
+}
+/* hamburger Component */
+
+.mobile-mega-menu.open {
+    background: #2158F5  !important;
+}
+
+.mobile-mega-menu ul li a {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-transform: none;
+    text-decoration: none;
+    padding: 15px 2.5%;
+    border-bottom: 1px solid #dbdbdb;
+	font-weight: normal;
+	float: left;
+	width: 95%;
+	text-indent: 5px;
+	font-size: 18px;
+    font-family: "filson_pro_book" !important;
+}
+
+.mobile-mega-menu .evo-icon-size-medium {
+    font-size: 0.9rem;
+    color: #fff !important;
+}
+
+.mobile-mega-menu .evo-icon-arrow-left2 {
+    float: left;
+    padding-top: 2px;
+	margin-right: 6px;
+}
+
+#app-hamburger-menu li:focus{
+    background-color:#060866 !important;
+}
+
+#app-hamburger-menu a:focus{
+    background-color:#060866 !important;
+}
+
+.hamburgerStyle {
+    background: #2158F5 !important;
+}
+
+.hamburgerHeader {
+    background: #2158F5;
+}
+
+.hamburgercontainerBody {
+    background: #060866;
+    overflow:auto;
+    height:90vh
+}
+
+.hamburgerTextColor {
+    color: #fff;
+    font-family: "filson_pro_book" !important;
+}
+
+.hamburgerTextColor a{
+    color:#00f4f0;
+}
+
+.hamburgerTextColor strong{
+   font-family: unset !important;
+   font-weight: bolder !important;
+}
+
+.hamburgerbackViewStyle {
+    font-size: 1em;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+
+
+/* touch Id Setup */
+.touchIdStyle {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+    margin-left:5%;
+    color: #000;
+}
+
+.touchIdText {
+    margin-left:5%;
+    text-align: justify;
+    margin-right:2%;
+    color: #000;
+}
+
+
+
+/* common titlebar */
+
+.custom-title-bar-logo {
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+	top: 0;
+}
+.custom-title-bar {
+	height: 3.4375rem;
+	line-height: 3.4375rem;
+}
+
+/* switch background change @quick balance settings*/
+.switch-paddle {
+  background: #2158F5;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 4rem;
+  height: 2rem;
+  transition: all 0.25s ease-out;
+  border-radius: 3px;
+  color: inherit;
+  font-weight: inherit;
+}
+
+
+/* congratulation page*/
+
+
+
+.pin-setup-msg {
+	padding: 10px !important;
+    margin-bottom: 3.8rem;
+}
+
+/* Quick Login */
+
+.user-para {
+	margin-top: 50px;
+	padding: 0px !important;
+}
+.balanceWrapper {
+	margin-top: 45px;
+}
+
+.btn-login {
+    background-color: #2158F5!important;
+    width: 300px !important;
+}
+.btn-login:active{
+    background-color: #060866 !important;
+}
+
+
+.btn-balance {
+	display: inline;
+	margin-top:60px;
+	background-color: #2158F5 !important;
+	width: calc(100% - 35%) !important;
+}
+.btn-balance:active {
+
+	background-color: #060866 !important;
+}
+
+
+.swipeArrow {
+    color: #2158F5 !important;
+}
+
+
+
+/* device pin*/
+
+.device-pin-lbl {
+   margin-bottom: 1rem;
+   color:black !important;
+}
+
+.forgotcode-txt {
+   padding-left: 0.95rem;
+   color:#2158F5 !important;
+}
+
+
+
+/* fingerprint */
+
+.fingerprint_setup_header {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.fingerprint_welcomeText{
+    padding: 10px !important;
+}
+
+/* Bootstrap Modal */
+
+.modal {
+  text-align: center;
+  width: 100%;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  width:90%
+}
+
+.modal-body {
+  overflow: auto;
+}
+
+.border_none{
+    border:none;
+    border-radius:0px;
+}
+
+.textalign{
+    text-align: center
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+.fade.in {
+    opacity: 1;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    outline: 0;
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Login settings */
+
+.gotoSettingsbtn{
+    width: 50% !important;
+    left: 25%;
+    position: absolute;
+}
+
+.btnSetupfingerprint{
+    width: 75% !important;
+    position: relative;
+    left: 12.5%;
+}
+
+/*   popup buttons */
+
+.custom-reveal-btn {
+    background: #fff;
+    color: #2158F5;
+    padding: 0;
+    margin-bottom: 0;
+    height: 45px;
+}
+
+.forgot-code-cancel-btn {
+    width: 50% !important;
+    border-right: 1px solid #abafb0;
+    float: left;
+}
+.forgot-code-reset-btn {
+    width: 50% !important;
+}
+
+.forgot-code-reset-btn:hover, .forgot-code-reset-btn:focus {
+	color: #fa0707;
+}
+
+.primaryBtn {
+    color: #2158F5 !important;
+}
+.secondaryBtn {
+    color: #303030 !important;
+}
+.skipBtn {
+    background-color: #060866 !important;
+    color: #ffffff !important;
+}
+.chnagePinPopStyle {
+    margin: 10%;
+    text-align: center;
+}

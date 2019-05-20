@@ -279,7 +279,7 @@ function getLoggedInUserDetails() {
 
 				},
 				error: function (error) {
-
+console.log("get customer details "+localStorage.getItem('mercerAPI')+"/v1/customer      response "+ JSON.stringify(error));
 					$("#user-data-loading-img-container").css("display", "none");
 					$("#logged-in-user-details").css("margin-top", "30px");
 					// tokenExpiresError(error,"user_details");
