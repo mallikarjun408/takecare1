@@ -162,7 +162,7 @@ function navigateToWebAppLogin() {
                 localStorage.setItem('mercerAPI',jsonObject.CurrentEndpoints);
 				if (jsonObject.UseNewEndpointsIOS) {}
 				//alert(typeof(jsonObject.UseNewEndpointsAndroid) + "   "+(jsonObject.UseNewEndpointsAndroid == true) )
-				if (jsonObject.UseNewEndpointsAndroid == "true") {
+				if ((jsonObject.UseNewEndpointsAndroid).toLowerCase() == "true") {
 				    //code challenge and code verifier values are generated in pairs
                     codeVerifier = generateRandomValue();
                     codeChallengeValue = getCodeChallenge(codeVerifier);
@@ -208,7 +208,7 @@ function navigateToWebAppLogin() {
 
 console.log("requestURL   "+requestURL);
             if(requestURL != null){
-                var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close,clearsessioncache=yes";
+                var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close";
                 console.log("requestURL  " + requestURL);
                 inAppBrowserObject = cordova.InAppBrowser.open(requestURL, '_blank', option);
                 inAppBrowserObject.addEventListener('loadstart', onBrowserLoadStart);

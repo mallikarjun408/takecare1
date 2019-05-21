@@ -296,7 +296,10 @@ function navigateToLoginPage() {
 		'isBalanceWithoutEnabled', 'false'
 	);
 	localStorage.clear();
-	window.location = '../index.html';
+	var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close,clearsessioncache=yes";
+    var inAppBrowserObject = cordova.InAppBrowser.open("", '_blank', option);
+    //setTimeout(function(){window.location = "../index.html"},10);
+    window.location = "../index.html"
 }
 
 function showFPDialog() {

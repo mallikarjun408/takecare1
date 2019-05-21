@@ -161,6 +161,10 @@ function clearRequiredData() {
 
     localStorage.clear();
 
+    var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close,clearsessioncache=yes";
+
+    var inAppBrowserObject = cordova.InAppBrowser.open("", '_blank', option);
+
 }
 
 function isNetworkAvailable() {
