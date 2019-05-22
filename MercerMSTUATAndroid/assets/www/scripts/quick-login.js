@@ -260,7 +260,7 @@ function getLoggedInUserDetails() {
 					'Authorization': 'Bearer ' + accessTokenValue
 				},
 				success: function (data) {
-
+console.log("get customer success details "+localStorage.getItem('mercerAPI')+"/v1/customer      response "+ JSON.stringify(data));
 					$("#user-data-loading-img-container").css("display", "none");
 					localStorage.setItem("user_details_retry", false);
 					if (data && data.givenNames && data.surname) {
