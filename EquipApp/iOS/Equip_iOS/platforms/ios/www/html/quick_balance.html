@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+    <style>
+        .custom-content-container p {
+        color: #727d84 !important;
+        padding: 0 3px 0 3px !important;
+        text-align: justify;
+        }
+    </style>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Quick Balance </title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<link rel="shortcut icon" href="../assets/images/core/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="onLoad()" class="contactus-image">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div style="height:88%" class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner">
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" style="background: #0196CC;" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #fff; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+
+					</div>
+					<div class="colored-header-text">
+						Quick Balance
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row">
+						<div class="small-12 columns">
+
+							<div class="quick-balance-title">
+								Quick Balance allows you to see your current account balance by swiping left from the login screen
+							</div>
+
+							<p style="/*color: #273a45;*/margin-top: 2.5rem;margin-bottom: 1.5rem;padding: 0px !important;">
+								Tap below to enable / disable Quick Balance on your device.
+
+							</p>
+
+							<div class="switch-container-div">
+								<div class="switch large custom-notification-switch" style="margin-bottom:0px !important">
+                                    <input class="switch-input" id="security-switch-ip" type="checkbox" name="exampleSwitch" style="height: 100%;width: 100%;">
+									<label class="switch-paddle" for="security-switch-ip">
+										<span class="show-for-sr">Show Large Elephants</span>
+									</label>
+								</div>
+								<div id="quick-balance-status" class="switch-msg-div"></div>
+								<!--<div id="abc" class="switch-msg-div">Quick Balance enabled</div>-->
+								<!--<div id="def" class="switch-msg-div">Quick Balance disabled</div>-->
+							</div>
+<!--                            <div id="notification-outer-container" style="padding-left: 1.4%; display: block;background: #f0f0f0; padding-top: 2%; padding-bottom: 2%;border: 0px solid #999999;">-->
+<!---->
+<!--                                <span style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">-->
+<!--                                    Quick Balance feature is now enabled on your device-->
+<!--                                </span>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div id="notification-outer-container1" style="padding-left: 1.4%; display: block;background: #f0f0f0; padding-top: 2%; padding-bottom: 2%;border: 0px solid #999999;">-->
+<!---->
+<!--                                <span style="color: #ffffff;font-weight: bold;font-size: 1.2rem;">-->
+<!--                                    Quick Balance feature is now disabled on your device-->
+<!--                                </span>-->
+<!--                            </div>-->
+
+						</div>
+					</div>
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="gotoTnC()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+    <div style="height:12%" class="footer"></div>
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script type="text/javascript" src="../scripts/quick_balance.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+	<script type="text/javascript" src="../assets/js/accounting.js"></script>
+
+</body>
+
+</html>

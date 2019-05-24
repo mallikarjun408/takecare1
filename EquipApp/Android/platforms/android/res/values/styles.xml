@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <!-- set the splash screen as the background image on all windows -->
+        <item name="android:windowBackground">@drawable/screen</item>
+    </style>
+</resources>

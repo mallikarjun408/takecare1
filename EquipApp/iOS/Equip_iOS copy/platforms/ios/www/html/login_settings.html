@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Login Success</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<link rel="shortcut icon" href="../assets/images/core/favicon.ico">
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="contactus-image" onload="onLoad();">
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div style="height:88%" class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" style="background: #0DA5F2;" role="banner">
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 0px 5px 0 0; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #fff; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+
+					</div>
+					<div class="colored-header-text">
+						Login Settings
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row" class="div-setup-fingerprint" id="fingerprint-setup-div">
+						<div class="small-12 columns login-settings-container">
+							<div class="login-settings-desc1" id="login-settings-description1">This application has support for Touch ID login</div>
+							<div class="login-settings-desc2" id="login-settings-description2">Setup Touch ID now for quick login</div>
+							<div style="text-align:center">
+								<button class="button expanded evo-button login-settings-btn" onclick="setupFingerprint()" id="setup-button">Setup Touch ID</button>
+							</div>
+						</div>
+
+						<div class="custom-revel-container reveal evo-reveal" id="fp-verify-dialog" style="padding:0px!important" data-reveal>
+							<div class="row login-form-main-container" style="background:#808080">
+								<form data-abide novalidate>
+									<label class="device-pin-lbl">Please verify your identity</br>Enter current PIN</label>
+									<div class="pin-input-div-container">
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1">
+										<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1" id="FirstDigit" onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+										<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1" id="SecondDigit" onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1">
+
+										<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1" id="ThirdDigit" onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1">
+
+										<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+											<div style="text-align:center">
+												<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+											</div>
+										</div>
+
+										<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" pattern="[0-9]*"
+										 inputmode="numeric" maxlength="1" id="FourthDigit" onfocus="textBoxFocus(this)">
+
+										<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" pattern="[0-9]*" inputmode="numeric"
+										 maxlength="1">
+									</div>
+									<label class="lbl-incorrect-attempts" id="incorrect-attempts-counter">Incorrect pin</label>
+
+								</form>
+
+							</div>
+						</div>
+
+
+
+					</div>
+
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="fp-info-dialog" data-reveal>
+							<p class="custom-reveal-para" id="reveal-msg-para">Before setting up Touch ID access, it's important to note that anyone who stores their Touch ID on this device will
+								have access to your account/s.</p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn fp-dontsetup-btn" onclick="dismissDialog()">Don't SetUp</button>
+								<button class="button expanded evo-button custom-reveal-btn fp-setup-btn" onclick="verifyUserIdentity()">SetUp</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" class="fingerprint-setup-done" id="fingerprint-setup-done-div">
+						<div class="small-12 columns">
+
+							<div class="fingerprint-feature-title" id="setup-title">
+								Now you can log in more easily using only your Touch ID.
+							</div>
+
+							<p class="fingerprint-feature-para" id="setup-para">
+								Tap below to enable / disable Touch ID as your preferred login method.
+							</p>
+
+							<div class="switch-container-div" style="margin-bottom:5% !important">
+								<div class="switch large custom-notification-switch" style="margin-bottom:0px !important">
+									<input class="switch-input" id="security-switch-ip" type="checkbox" name="exampleSwitch">
+									<label class="switch-paddle" for="security-switch-ip">
+										<span class="show-for-sr">Show Large Elephants</span>
+									</label>
+								</div>
+								<div id="fingerprint-not-default" class="fingerprint-switch">Touch ID is disabled</div>
+								<div id="fingerprint-default" class="fingerprint-switch">Touch ID is enabled</div>
+							</div>
+							<div style="display:none" class="fingerprint-feature-value" id="fingerprint-default">
+								Touch ID is enabled
+							</div>
+							<div style="display:none" class="fingerprint-feature-value" id="fingerprint-not-default">
+								Touch ID is disabled
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row" class="div-fingerprint-error" id="fingerprint-error-div">
+						<div class="small-12 columns login-settings-container">
+							<div class="login-settings-desc1" id="login-settings-mesg">This application has support for Touch ID login</div>
+							<div class="login-settings-desc2" id="login-settings-para">It seems that you have not yet setup Touch ID on your device</br>Click below to go to settings and setup Touch ID</div>
+							<div style="text-align:center">
+								<button class="button expanded evo-button login-settings-btn" onclick="gotoSettings()">Go to Settings</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+					<!-- FINGERPRINT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="fingerprint-dialog" data-reveal>
+						<p class="custom-reveal-para" id="fp-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close onclick="updateBackground()">OK</button>
+						</div>
+					</div>
+					<!-- FINGERPRINT DIALOG END -->
+
+					<!--Page Overlay-->
+					<div id="overlay-div" class="full-page-overlay">
+						<div style="text-align:center">
+							<img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+						</div>
+					</div>
+					<!--Page Overlay-->
+
+					<!-- MAX ATTEMTPS DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal" id="max-attempts-alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="max-attempts-message"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" onclick="navigateToLoginPage()" data-close>OK</button>
+						</div>
+					</div>
+					<!-- MAX ATTEMTPS DIALOG END -->
+					<!-- FINGERPRINT ERROR DIALOG START -->
+					<div class="small-12 medium-8 columns">
+						<div class="custom-revel-container reveal evo-reveal" id="alert-dialog-FP" data-reveal>
+							<p class="custom-reveal-para" id="message-to-display-FP"></p>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+							</div>
+						</div>
+					</div>
+					<!-- FINGERPRINT ERROR DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<div style="height:12%" class="footer"></div>
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script type="text/javascript" src="../scripts/login_settings.js"></script>
+	<script type="text/javascript" src="../scripts/page_utils.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Enter a 4-digit device PIN</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="CSS Boilerplate for Evolution">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+	<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+	<link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="generic-back-image" onload="onLoad();">
+
+	<!-- OFF-CANVAS WRAPPER - BEGINS -->
+	<div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+			<!-- HEADER - BEGINS -->
+			<header class="evo-header evo-site-header" role="banner">
+
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+				<nav class="custom-title-bar">
+					<div class="custom-title-bar-logo">
+						<span class="urlBack" style="position: relative; width: 20px; height: 20px; display: inline-block; margin: 10px; vertical-align: middle;cursor: pointer;">
+							<i class="evo-icon-arrow-left2 evo-icon-size-small" style="font-size: 1em; color: #727d84; width: 20px; height: 20px; position: absolute;"></i>
+						</span>
+					</div>
+
+				</nav>
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
+
+			</header>
+			<!-- HEADER - ENDS -->
+
+			<!-- PAGE CONTENT - BEGINS -->
+			<div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+				<!-- PAGE - BEGINS -->
+				<section role="main">
+					<div class="row single-form-container">
+						<form data-abide novalidate>
+							<label class="device-pin-lbl">Enter a 4-digit device PIN</label>
+
+							<div class="pin-input-div-container">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="firstDiv" onclick="firstDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="FirstDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="secondDiv" onclick="secondDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="SecondDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="thirdDiv" onclick="thirdDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-txt" type="number" maxlength="1" id="ThirdDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+								<div class="test-div" id="fourthDiv" onclick="fourthDivClick()">
+									<div style="text-align:center">
+										<img class="test-image-div" alt="loading" src="../assets/images/dot_icon.png">
+									</div>
+								</div>
+								<input onpaste="return false;" onCopy="return false" class="pin-textbox device-pin-lasttxt" type="number" maxlength="1" id="FourthDigit"
+								 onfocus="textBoxFocus(this)">
+
+								<input onpaste="return false;" onCopy="return false" class="empty-hidden-field" type="number" maxlength="1">
+
+							</div>
+
+						</form>
+
+					</div>
+					<!-- Pin incorrectly entered reveal - BEGINS -->
+					<div class="small-12 medium-8 columns display_none">
+						<div class="custom-revel-container reveal evo-reveal" id="wrong-pin-reveal" data-reveal>
+							<h3>Choose a Stronger PIN </h3>
+							<p class="custom-reveal-para" style="margin-bottom: 1rem;">It should not contain the following:</p>
+							<ul style="padding-left: 0.6rem;">
+								<li>Repeated numbers e.g.
+									<b> 1111,2222</b>
+								</li>
+								<li>Sequential numbers e.g.
+									<b> 1234,9876</b>
+								</li>
+							</ul>
+							<div class="custom-reveal-btn-container">
+								<button class="button expanded evo-button custom-reveal-btn retrybtn" onclick="okclicked()" data-close>Retry</button>
+							</div>
+
+						</div>
+					</div>
+					<!-- Pin incorrectly entered reveal - ENDS -->
+					<!-- ALERT DIALOG START -->
+					<div class="custom-revel-container reveal evo-reveal display_none" id="alert-dialog" data-reveal>
+						<p class="custom-reveal-para" id="message-to-display"></p>
+						<div class="custom-reveal-btn-container">
+							<button class="button expanded evo-button custom-reveal-btn" data-close>OK</button>
+						</div>
+					</div>
+					<!-- ALERT DIALOG END -->
+
+				</section>
+				<!-- PAGE - ENDS -->
+
+			</div>
+			<!-- PAGE CONTENT - ENDS -->
+
+		</div>
+	</div>
+	<!-- OFF-CANVAS WRAPPER - ENDS -->
+
+	<script type="text/javascript" src="../cordova.js"></script>
+	<script src="../assets/js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/evolution.js"></script>
+	<script src="../assets/js/evolution-animations.js"></script>
+	<script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../assets/js/back.js"></script>
+	<script src="../scripts/enter_4_digit_pin-quick_pin_setup.js"></script>
+	<script src="../scripts/page_utils.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+{
+  "_from": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+  "_id": "cordova-plugin-3dtouch@1.3.6",
+  "_inBundle": false,
+  "_integrity": "sha1-6D0cxz9yfrVhI+1l2cF47Hir35E=",
+  "_location": "/cordova-plugin-3dtouch",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+    "rawSpec": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+    "saveSpec": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+    "fetchSpec": "https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git#1804e75fd0bf81708f04c100dff6bfe02982f5d5",
+  "_spec": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git",
+  "_where": "C:\\Users\\10612992.NMUMARL\\Desktop\\Temp Things\\Test\\MercerSuper_NoCarousel",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/EddyVerbruggen"
+  },
+  "bugs": {
+    "url": "https://github.com/EddyVerbruggen/cordova-plugin-3dtouch/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-3dtouch",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Add Quick Actions to your Home Screen which can be triggered by 3D Touch. Also, you can enable Link Preview with this plugin. Supported on iPhone6S an up.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "homepage": "https://github.com/EddyVerbruggen/cordova-plugin-3dtouch#readme",
+  "keywords": [
+    "3DTouch",
+    "3D Touch",
+    "Force",
+    "Force Touch",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-3dtouch",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddyVerbruggen/cordova-plugin-3dtouch.git"
+  },
+  "version": "1.3.6"
+}

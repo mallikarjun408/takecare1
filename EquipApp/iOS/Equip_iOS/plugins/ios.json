@@ -1,0 +1,65 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-open-native-settings": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-add-swift-support": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-secure-storage": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-touch-id": {
+      "FACEID_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.lnt.mercer"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "mercersuperapp",
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-3dtouch": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    }
+  },
+  "dependent_plugins": {}
+}

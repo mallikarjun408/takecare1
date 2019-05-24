@@ -1,0 +1,142 @@
+<!doctype html>
+<!--[if IE 9]><html class="no-js ie9" lang=""><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <!--<style>-->
+    <!--.custom-content-container p {-->
+    <!--color: #000 !important;-->
+    <!--padding: 0 3px 0 3px !important;-->
+    <!--text-align:justify;-->
+    <!--}-->
+    <!--</style>-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>3D Quick Balance</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="CSS Boilerplate for Evolution">
+    <link rel="shortcut icon" href="../assets/images/core/favicon.ico">
+    <link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/jquery-mobile-mega-menu.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body onclick="pageLevelClick(event)" class="generic-back-image" onload="onload()">
+    <!-- OFF-CANVAS WRAPPER - BEGINS -->
+    <div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+
+            <!-- PAGE CONTENT - BEGINS -->
+
+
+            <div class="off-canvas-wrapper evo-off-canvas custom-page-container">
+                <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+                    <!-- HEADER - BEGINS -->
+
+                    <header class="evo-header evo-site-header" role="banner"></header>
+
+                    </br>
+                    </br>
+
+                    <!-- PAGE CONTENT - BEGINS -->
+                    <div class="off-canvas-content custom-content-container" data-off-canvas-content>
+
+                        <!-- PAGE - BEGINS -->
+                        <section role="main">
+                            <div class="row">
+                                <div id="loading-img-container" class="loading-imge-container slidLoading" style="text-align: center;display:none;">
+                                    <img width="15%" title="loading" alt="loading" src="../assets/images/loading_indicator.gif">
+                                </div>
+
+                                <div id="quick-balance-slide-container" class="quick-balance-slider-container slidContent" style="display:none; padding-left:18%; padding-top:22%;">
+                                    <div class="balanceWrapper">
+                                        <p class="lead">
+                                            <b>$1,234,567.00 </b>
+                                            </br> Account balance at </br> 00 Month 2017 </p>
+                                    </div>
+                                </div>
+                                <div id="message-to-Enable-QB" class="quick-balance-slider-container slidContent" style="display:none; padding-left:5%; padding-top:22%;">
+
+                                    <p class="lead"> Please Enable Quick Balance to see your updated Account Balance.</p>
+
+                                </div>
+
+                                <div id="login-container-div">
+
+                                    <span>
+                                        <button id="btn-login" class="button expanded evo-button custom-btn-style" onclick="quickLoginClicked()">Login</button>
+                                    </span>
+                                </div>
+
+                                <div id="overlay-div" class="full-page-overlay">
+                                    <div style="text-align:center">
+                                        <img class="overlay-img-network-indicator" alt="loading" src="../assets/images/loading_indicator.gif">
+                                    </div>
+                                </div>
+
+
+
+                        </section>
+
+                        <!-- REVEAL - BEGINS -->
+                        <div class="custom-revel-container reveal evo-reveal" id="accept-tnc-3D" data-reveal>
+                            <h3>Message</h3>
+                            <p class="custom-reveal-para">To See Quick Balance you need to accept Terms and Conditions and Enable Quick Balance</p>
+                            <div class="custom-reveal-btn-container">
+                                <button class="button expanded evo-button custom-reveal-btn" data-close>Ok</button>
+                            </div>
+                        </div>
+
+                        <!-- REVEAL - ENDS -->
+                        <!-- DIALOG FOR MAX ATTEMPTS -->
+                        <div class="small-12 medium-8 columns">
+                            <div class="custom-revel-container reveal evo-reveal" id="max-attempts-dialog" data-reveal>
+                                <p class="custom-reveal-para" id="max-attempts-msg"></p>
+                                <div class="custom-reveal-btn-container">
+                                    <button class="button expanded evo-button custom-reveal-btn" onclick="gotoEnterPin()">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DIALOG FOR MAX ATTEMPTS -->
+                        <!-- FINGERPRINT ERROR DIALOG START -->
+                        <div class="small-12 medium-8 columns">
+                            <div class="custom-revel-container reveal evo-reveal" id="alert-dialog-FP" data-reveal>
+                                <p class="custom-reveal-para" id="message-to-display-FP"></p>
+                                <div class="custom-reveal-btn-container">
+                                    <button class="button expanded evo-button custom-reveal-btn" onclick="enterPINPage()">USE PIN</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FINGERPRINT ERROR DIALOG END -->
+
+                        <!-- PAGE - ENDS -->
+
+                        </div>
+                        <!-- PAGE CONTENT - ENDS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../assets/js/jquery-3.2.1.min.js"></script>
+        <script src="../assets/js/evolution.js"></script>
+        <script src="../assets/js/evolution-animations.js"></script>
+        <script src="../assets/js/jquery-mobile-mega-menu.js"></script>
+        <script src="../assets/js/app.js"></script>
+        <script src="../assets/js/back.js"></script>
+        <script src="../scripts/quick_bal3d.js"></script>
+        <script src="../scripts/page_utils.js"></script>
+        <script src="../scripts/login_utils.js"></script>
+</body>
+
+</html>

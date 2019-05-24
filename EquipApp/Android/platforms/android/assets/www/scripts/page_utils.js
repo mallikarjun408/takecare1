@@ -1,0 +1,204 @@
+/**
+    This method is responsible for handling the page level click
+    Event provides reference to the hyperlink which can be later opened in inAppBrowser
+*/
+function pageLevelClick(event) {
+
+    //the origin for the internal app links is file:// and
+    //for the href links the origin is url domain
+    var hrefOrigin = event.target.origin;
+    var hrefValue = event.target.getAttribute("href");
+    if ((hrefOrigin != "file://") && (hrefOrigin != "tel://") && (hrefOrigin != "sms://")
+        && (hrefOrigin != "mailto://") && (hrefOrigin != "geo://") && (hrefOrigin != "market://")
+        && hrefValue) {
+
+        event.preventDefault();
+
+        var option = "location=no,toolbarposition=bottom,closebuttoncaption=Close";
+        var browserTarget;
+        var devicePlatform = device.platform;
+        //native android does not have support for PDF files hence setting the browser
+        //target only in case of android
+        if (devicePlatform == "Android") {
+            //splitting the href link by '.'
+            var fileDetailsArray = (hrefValue.split("."));
+            var fileExtensionIndex = fileDetailsArray.length - 1;
+            //JS arrays are 0 index based
+            var fileExtension = fileDetailsArray[fileExtensionIndex];
+            //if the file type is PDF then opening the same in system browser
+            if ((fileExtension === "pdf") || (fileExtension === "PDF")) {
+                //system browsers are able to handle the pdf extensions better for download
+                //since the android webview does not support direct PDF links
+                browserTarget = '_system';
+            } else {
+                //rest other files can be opened in normal webview
+                browserTarget = '_blank';
+            }
+        } else {
+            browserTarget = '_blank';
+        }
+        //the hyperlink would be opened in inAppBrowser
+        cordova.InAppBrowser.open(hrefValue, browserTarget, option);
+
+    }
+
+}
+
+/**
+ * This method requires Keyboard plugin to be installed
+ * If the keyboard is visible then the method would hide the same
+ */
+function hideDeviceKeyboard() {
+    if (Keyboard.isVisible) {
+        Keyboard.hide();
+    }
+}
+
+function openDeviceKeyboard() {
+    if (Keyboard.isVisible) {
+        Keyboard.show();
+    }
+}
+
+/**
+ * This method is responsible for checking whether the input value is number or not
+ * @param evt The Keyboard input event
+ */
+function isNumberKey(event) {
+    // var charCode = (evt.which) ? evt.which : evt.keyCode
+    // //char code for the delete button is 8
+    // if ((charCode >= 48 && charCode <= 57) || charCode == 8) {
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+
+    var inputValue = event.target.value;
+    var digitPattern = /[0-9]/g;
+    var result = inputValue.match(digitPattern);
+    if (result != null) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+/**
+ * This method is responsible for returning the date in the format XX Month Year
+ * @param date Date Object
+ */
+function formatDate(date) {
+
+    var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+    ];
+
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+
+}
+
+function clearRequiredData() {
+
+    var ss = new cordova.plugins.SecureStorage(
+        function () {
+            //successfully initialized secure storage
+        },
+        function (error) {
+            console.log('Error ' + error);
+            hideDeviceKeyboard();
+            //@Sagar first set the message to display later on display the alert
+            //Below message can be updated for better user information
+            $("#message-to-display").html("Error");
+            $("#alert-dialog").foundation("open");
+        },
+        'my_app'
+    );
+    ss.remove(
+        function (key) {
+            console.log('Removed ' + key);
+        },
+        function (error) {
+            console.log('Error, ' + error);
+        },
+        'devicepin'
+    );
+    ss.remove(
+        function (key) {
+            console.log('Removed ' + key);
+        },
+        function (error) {
+            console.log('Error, ' + error);
+        },
+        'quickLoginType'
+    );
+
+    ss.set(
+        function (key) {
+
+        },
+        function (error) {
+            console.log('Error ' + error);
+        },
+        'isBalanceWithoutEnabled', 'false'
+    );
+
+    localStorage.clear();
+
+}
+
+function isNetworkAvailable() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.CELL] = 'Cell generic connection';
+    states[Connection.NONE] = 'No network connection';
+
+    if ((networkState == "none") || (networkState == states[Connection.NONE])) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getDateDifference(olderDate, newerDate) {
+
+    var one_day = 1000 * 60 * 60 * 24;    // Convert both dates to milliseconds
+    var olderDate_ms = olderDate.getTime();
+    var newerDate_ms = newerDate.getTime();    // Calculate the difference in milliseconds  
+    var dateDifference_ms = newerDate_ms - olderDate_ms;        // Convert back to days and return   
+    return Math.round(dateDifference_ms / one_day);
+
+}
+
+function onAppResume() {
+
+    console.log("On App Resume called");
+    var lastLoginVal = localStorage.getItem("lastLoginDate");
+    if (lastLoginVal) {
+
+        var lastLoginDate = new Date(lastLoginVal);
+        var dateDifference = getDateDifference(lastLoginDate, new Date());
+        if (dateDifference >= 90) {
+            clearRequiredData();
+           /* window.location = "../index.html";*/
+        }
+    } else {
+        clearRequiredData();
+        window.location = "../index.html";
+    }
+
+}
