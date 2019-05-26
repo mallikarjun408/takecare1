@@ -1,0 +1,5 @@
+int id btnNegative 0x7f010000
+int id btnPositive 0x7f010001
+int id txtViewMessage 0x7f010002
+int id txtViewTitle 0x7f010003
+int layout dialog_layout 0x7f020000

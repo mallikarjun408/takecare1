@@ -1,12 +1,12 @@
 var inAppBrowserObject;
 
 //used for identifying from which application the requests are originating
-var client_secret_id ="hFhaSfbgxXS6eGYipbQXv5XgpVuyRHXr"; //"s70Pbmr8JNToDgSOfK5TQSDKxVJMEehz";
+var client_secret_id ="NIgrdtsgnKb0yZ0DATZNtkjJaz99FP02"; //"s70Pbmr8JNToDgSOfK5TQSDKxVJMEehz";
 var code_challenge_method = "S256";
 //the redirect url for the web application and must not be modified unless informed by server side
 //this URL is configured on the server side
 var app_redirect_url = "equipapp://callback.html";
-var baseUrl = "https://services.mercerfinancialservices.com";
+var baseUrl = "https://uat.services.mercerfinancialservices.com";
 //var baseUrl = "https://services.mercerfinancialservices.com";
 
 /**

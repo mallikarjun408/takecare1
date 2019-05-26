@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/minuagrawal/Desktop/SVNMercerAndroid/platforms/android/CordovaLib/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/minuagrawal/Desktop/SVNMercerAndroid/platforms/android/CordovaLib/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\workspace\LNT_MERCER\takecare1\EquipApp\Android\platforms\android\CordovaLib\src\main\shaders"/></dataSet><dataSet config="debug"><source path="E:\workspace\LNT_MERCER\takecare1\EquipApp\Android\platforms\android\CordovaLib\src\debug\shaders"/></dataSet></merger>

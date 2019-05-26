@@ -16,19 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-qjrzSW9gMiUgpUvqgEPE4_-8swvyCtfOVvg55o5S_es
-M25iVXpKU3puUjFaYWg3T1NDTDQtcW1ROUY5YXlwalNoc0hhakxifmZHag
+//qjrzSW9gMiUgpUvqgEPE4_-8swvyCtfOVvg55o5S_es
+//M25iVXpKU3puUjFaYWg3T1NDTDQtcW1ROUY5YXlwalNoc0hhakxifmZHag
 var inAppBrowserObject;
 
 //used for identifying from which application the requests are originating
-var client_secret_id =  "hFhaSfbgxXS6eGYipbQXv5XgpVuyRHXr";
+var client_secret_id = "NIgrdtsgnKb0yZ0DATZNtkjJaz99FP02";//"hFhaSfbgxXS6eGYipbQXv5XgpVuyRHXr";
 var code_challenge_method = "S256";
 //the redirect url for the web application and must not be modified unless informed by server side
 //this URL is configured on the server side
 var app_redirect_url = "equipapp://callback.html";
 
 //var app_redirect_url = "equipapp://callback.html";
-var baseUrl = "https://services.mercerfinancialservices.com";
+var baseUrl = "https://uat.services.mercerfinancialservices.com";``
 //var baseUrl = "https://services.mercerfinancialservices.com";
 var me;
 var app = {

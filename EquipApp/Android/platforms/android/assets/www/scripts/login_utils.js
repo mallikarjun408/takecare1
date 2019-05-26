@@ -1,6 +1,6 @@
 var empNo, planNo, password;
-var baseUrl = "https://services.mercerfinancialservices.com";
-var client_secret_id = "hFhaSfbgxXS6eGYipbQXv5XgpVuyRHXr";//"7De10Sd1l0MytEnk8AVzu676gGMKgnSI";
+var baseUrl = "https://uat.services.mercerfinancialservices.com";
+var client_secret_id = "NIgrdtsgnKb0yZ0DATZNtkjJaz99FP02";//"hFhaSfbgxXS6eGYipbQXv5XgpVuyRHXr";//"7De10Sd1l0MytEnk8AVzu676gGMKgnSI";
 
 // $(document).ready(function () {
 //     document.addEventListener("deviceready", loginUtilDeviceReady, false);
